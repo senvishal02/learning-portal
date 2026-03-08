@@ -1,4 +1,5 @@
-mkdocs==1.6.1
 mkdocs-material==9.5.18
 mkdocs-awesome-pages-plugin
 mkdocs-minify-plugin
+mkdocs-mermaid2-plugin
+mkdocs-git-revision-date-localized-plugin

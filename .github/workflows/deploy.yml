@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Deploy MkDocs
 
 on:
   push:
@@ -6,32 +6,49 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
 
-  deploy:
-
+  build:
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout portal repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Clone courses repo
-        run: |
-          git clone https://github.com/senvishal02/courses.git docs/courses
 
       - name: Setup Python
         uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
+      - name: Clone courses repo
+        run: |
+          git clone https://github.com/YOURORG/courses.git docs/courses
+
       - name: Build site
         run: mkdocs build
 
-      - name: Deploy site
-        run: mkdocs gh-deploy --force
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy
+        uses: actions/deploy-pages@v4

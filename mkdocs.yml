@@ -54,7 +54,7 @@ theme:
 plugins:
   - search
   - tags
-  # - git-revision-date-localized
+  - git-revision-date-localized
   - minify
 
 markdown_extensions:

@@ -37,7 +37,7 @@ Build strong foundations in **systems, automation, cloud platforms, and operatio
     - Advanced Administration
     - Projects
     
-→ [:material-open-in-new: Open Course](courses/linux/index.md){ .md-button }
+  → Coming Soon
   <!-- → [Open Linux Course](courses/linux/index.md) -->
 
 </div>

@@ -20,7 +20,7 @@ This platform provides structured learning paths for modern infrastructure engin
   Build, deploy, and monitor machine learning pipelines in production.
   Topics include ML pipelines, model deployment, feature stores, and ML monitoring.
 
-  → [Open MLOps Course](mlops/index.md)
+  → [Open MLOps Course](./courses/mlops/index.md)
 
 - ### 🧠 AIOps Engineering
   Use AI and automation to improve observability, incident response, and infrastructure management.

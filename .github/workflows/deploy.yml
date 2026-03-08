@@ -31,7 +31,7 @@ jobs:
 
       - name: Clone courses repo
         run: |
-          git clone https://github.com/YOURORG/courses.git docs/courses
+          git clone https://github.com/senvishal02/courses.git docs/courses
 
       - name: Build site
         run: mkdocs build

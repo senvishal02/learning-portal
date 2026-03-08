@@ -1,0 +1,137 @@
+site_name: DevOps Courses
+site_description: Complete learning platform for DevOps, MLOps and AIOps Engineers
+site_author: Vishal Sen
+site_url: https://senvishal02.github.io/learning-portal/
+theme:
+  name: material
+  font:
+    text: Inter
+    code: JetBrains Mono
+  # logo: assets/logo.png
+  favicon: assets/favicon.svg
+  palette:
+    # Light Mode (Soft Paper)
+    - scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Dark Mode
+    - scheme: slate
+      primary: teal
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  features:
+    # Navigation
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.expand
+
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - content.action.view
+
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # TOC
+    - toc.follow
+
+plugins:
+  - search
+  - tags
+  # - git-revision-date-localized
+  - minify
+
+markdown_extensions:
+
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  # Code features
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      auto_title: true  
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - admonition
+  - pymdownx.details
+
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Task lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # Emojis
+  # - pymdownx.emoji:
+  #     emoji_index: !!python/name:material.extensions.emoji.twemoji
+  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # Diagrams (important for DevOps)
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/senvishal02
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/vishalsen-connect
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/
+  # analytics:
+  #   provider: google
+  #   property: G-XXXXXXXX
+
+copyright: Copyright © 2026 Vishal Sen
+
+
+
+nav:
+  - Home: index.md
+  - Terraform:
+      - Overview: terraform/index.md
+      - Introduction: terraform/introduction.md
+      - Installation: terraform/installation.md
+      - Modules:
+          - Basics: terraform/modules/basics.md
+          - Advanced: terraform/modules/advanced.md
+  - Ansible:
+      - Overview: ansible/index.md
+      - Introduction: ansible/intro.md
+      - Playbooks: ansible/playbooks.md
+      - Roles: ansible/roles.md
+  - Linux:
+      - Overview: linux/index.md
+      - Basics: linux/basics.md
+      - Networking: linux/networking.md
+      - Security: linux/security.md

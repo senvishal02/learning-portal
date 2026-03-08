@@ -7,6 +7,8 @@ theme:
   font:
     text: Inter
     code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
   # logo: assets/logo.png
   favicon: assets/favicon.svg
   palette:
@@ -58,46 +60,31 @@ plugins:
   - minify
 
 markdown_extensions:
-
-  # Admonitions
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji
 
-  # Code features
   - pymdownx.highlight:
       anchor_linenums: true
       linenums: true
       auto_title: true  
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
 
-  - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
 
-  - admonition
-  - pymdownx.details
-  # - toc:
-  #     permalink: true
-
-  # Tabs
   - pymdownx.tabbed:
       alternate_style: true
 
-  # Task lists
   - pymdownx.tasklist:
       custom_checkbox: true
 
-  # Emojis
-  # - pymdownx.emoji:
-  #     emoji_index: !!python/name:material.extensions.emoji.twemoji
-  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-  # Diagrams (important for DevOps)
-  - pymdownx.superfences
-  - attr_list
-  - md_in_html
+
 
 extra:
   generator: false

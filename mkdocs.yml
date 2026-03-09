@@ -248,7 +248,9 @@ nav:
           - Secure SSH Server: ./courses/linux/15-Projects/02-Secure-SSH-Server.md
           - LVM RAID Implementation: ./courses/linux/15-Projects/03-LVM-RAID-Implementation.md
           - Automated Backup System: ./courses/linux/15-Projects/04-Automated-Backup-System.md
-
+  - Git/ Github: ./courses/git/index.md
+  - Web Servers: ./courses/webserver/index.md
+  - Docker: ./courses/docker/index.md
   # -----------------------------
   # Kubernetes Course
   # -----------------------------
@@ -297,6 +299,13 @@ nav:
           - CI/CD GitOps Pipeline: ./courses/kubernetes/14-PROJECTS/03-cicd-gitops-pipeline
           - MLOps Pipeline: ./courses/kubernetes/14-PROJECTS/04-mlops-pipeline
 
+  - Ansible: ./courses/ansible/index.md
+  - AWS: ./courses/aws/index.md
+  - Azure: ./courses/azure/index.md
+  - GCP: ./courses/gcp/index.md
+  - CI/CD: ./courses/cicd/index.md
+  - Monitoring: ./courses/monitoring/index.md
+
   # -----------------------------
   # MLOps Course
   # -----------------------------
@@ -319,3 +328,6 @@ nav:
       - Feature Store: ./courses/mlops/15-feature-store/index.md
       - Terraform: ./courses/mlops/16-terraform/index.md
       - Projects: ./courses/mlops/17-projects/index.md
+ 
+  - Lab Setup: ./lab-setup/index.md
+  - Cheat Sheet: ./courses/cheatsheet/index.md   

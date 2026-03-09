@@ -97,9 +97,9 @@ extra:
       link: https://linkedin.com/in/vishalsen-connect
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/
-  # analytics:
-  #   provider: google
-  #   property: G-XXXXXXXX
+  analytics:
+    provider: google
+    property: G-9EMB0HV2EK
 
 copyright: Copyright © 2026 Vishal Sen
 

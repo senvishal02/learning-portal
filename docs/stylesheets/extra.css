@@ -1,0 +1,64 @@
+/* Reduce code block size */
+.md-typeset pre {
+  padding: 0.5rem;
+}
+
+.md-typeset pre code {
+  font-size: 0.8rem;
+}
+
+/* Right-side icon toolbar */
+.icon-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Toolbar buttons */
+.icon-toolbar a {
+  padding: 6px 5px;
+  border-radius: 6px;
+}
+
+/* Course card grid spacing */
+.md-typeset .grid.cards {
+  gap: 1rem;
+}
+
+/* Improve headings spacing */
+.md-typeset h1 {
+  margin-top: 0;
+}
+.course-preview {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.course-preview .preview-box {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 300px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.course-preview:hover .preview-box {
+  display: block;
+}
+
+.course-link {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.course-link:hover {
+  color: var(--md-accent-fg-color) !important;
+}

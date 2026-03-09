@@ -1,32 +1,39 @@
+# Project information
 site_name: DevOps Courses
 site_description: Complete learning platform for DevOps, MLOps and AIOps Engineers
 site_author: Vishal Sen
 site_url: https://learning.vishal-connect.com
+
+# Configuration
 theme:
   name: material
   font:
-    text: Inter
-    code: JetBrains Mono
+    text: Roboto
+    code: Roboto Mono
   icon:
     repo: fontawesome/brands/github
+    annotation: material/arrow-right-circle
   # logo: assets/logo.png
   favicon: assets/favicon.svg
   palette:
-    # Light Mode (Soft Paper)
-    - scheme: default
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: teal
       accent: indigo
       toggle:
-        icon: material/weather-night
+        icon: material/toggle-switch
         name: Switch to dark mode
-
-    # Dark Mode
-    - scheme: slate
-      primary: teal
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
       accent: deep purple
       toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+        icon: material/toggle-switch-off
+        name: Switch to system preference
 
   features:
     # Navigation
@@ -54,34 +61,62 @@ theme:
     - toc.follow
 
 plugins:
-  - search
   - tags
   # - git-revision-date-localized
-  - minify
-
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
 markdown_extensions:
+  - abbr
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
   - attr_list
+  - def_list
+  - footnotes
   - md_in_html
-  - pymdownx.emoji
-
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
-      linenums: true
-      auto_title: true  
-
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+        - includes/glossary.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-
-  - pymdownx.tabbed:
-      alternate_style: true
-
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tilde
 
 
 
@@ -99,11 +134,16 @@ extra:
       link: https://hub.docker.com/
   analytics:
     provider: google
-    property: G-9EMB0HV2EK
+    property: !ENV GOOGLE_ANALYTICS_KEY
 
+extra_css:
+  - stylesheets/extra.css
+
+# Copyright
 copyright: Copyright © 2026 Vishal Sen
 
-
+not_in_nav: |
+  ./courses/**/*.md
 
 nav:
   - Home: index.md
@@ -111,6 +151,21 @@ nav:
   # -----------------------------
   # Linux Course
   # -----------------------------
+#   - Courses:
+#     - Linux: ./courses/linux/index.md
+#     - Git/ Github: ./courses/git/index.md
+#     - Web Servers: ./courses/webserver/index.md
+#     - Docker: ./courses/docker/index.md
+#     - Kubernetes: ./courses/kubernetes/index.md
+#     - Ansible: ./courses/ansible/index.md
+#     - AWS: ./courses/aws/index.md
+#     - Azure: ./courses/azure/index.md
+#     - GCP: ./courses/gcp/index.md
+#     - CI/CD: ./courses/cicd/index.md
+#     - Monitoring: ./courses/monitoring/index.md
+#   - Lab Setup: ./lab-setup/index.md
+#   - Cheat Sheet: ./courses/cheatsheet/index.md
+
   - Linux:
       - Overview: ./courses/linux/index.md
       - Introduction:

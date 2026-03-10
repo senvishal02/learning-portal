@@ -62,3 +62,31 @@
 .course-link:hover {
   color: var(--md-accent-fg-color) !important;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-content {
+  visibility: hidden;
+  width: 260px;
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 13px;
+}
+
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}

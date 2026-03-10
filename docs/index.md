@@ -226,6 +226,18 @@ Build strong foundations in **systems, automation, cloud platforms, and operatio
     - Docker commands
     - Kubernetes commands
 
+- [:material-account-supervisor-outline: **Interview Q&A**](courses/interviewqna/index.md){ .course-link }  
+  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
+
+??? abstract "[Cheat Sheet Collection](courses/interviewqna/index.md){ .course-link }"
+
+    Quick reference guides.
+
+    - Linux Interview
+    - Git Interview
+    - Docker Interview
+    - Kubernetes commands
+
 </div>
 
 ---

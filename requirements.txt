@@ -4,3 +4,6 @@ mkdocs-minify-plugin
 mkdocs-mermaid2-plugin
 mkdocs-git-revision-date-localized-plugin
 pymdown-extensions
+pyyaml-include
+mkdocs-include-markdown-plugin
+mkdocs-monorepo-plugin

@@ -13,8 +13,8 @@ theme:
   icon:
     repo: fontawesome/brands/github
     annotation: material/arrow-right-circle
-  # logo: assets/logo.png
-  favicon: assets/favicon.svg
+#   logo: assets/logo.png
+#   favicon: assets/favicon.ico
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -44,6 +44,7 @@ theme:
     - navigation.footer
     - navigation.tracking
     - navigation.expand
+    - navigation.indexes
 
     # Content
     - content.code.copy
@@ -51,6 +52,7 @@ theme:
     - content.tabs.link
     - content.action.edit
     - content.action.view
+    - content.tooltips
 
     # Search
     - search.suggest
@@ -100,6 +102,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
+      base_path: docs
       auto_append:
         - includes/mkdocs.md
         - includes/glossary.md
@@ -146,26 +149,8 @@ not_in_nav: |
   ./courses/**/*.md
 
 nav:
-  - Home: index.md
-
-  # -----------------------------
-  # Linux Course
-  # -----------------------------
-#   - Courses:
-#     - Linux: ./courses/linux/index.md
-#     - Git/ Github: ./courses/git/index.md
-#     - Web Servers: ./courses/webserver/index.md
-#     - Docker: ./courses/docker/index.md
-#     - Kubernetes: ./courses/kubernetes/index.md
-#     - Ansible: ./courses/ansible/index.md
-#     - AWS: ./courses/aws/index.md
-#     - Azure: ./courses/azure/index.md
-#     - GCP: ./courses/gcp/index.md
-#     - CI/CD: ./courses/cicd/index.md
-#     - Monitoring: ./courses/monitoring/index.md
-#   - Lab Setup: ./lab-setup/index.md
-#   - Cheat Sheet: ./courses/cheatsheet/index.md
-
+  - Home:
+    - index.md
   - Linux:
       - Overview: ./courses/linux/index.md
       - Introduction:
@@ -251,9 +236,6 @@ nav:
   - Git/ Github: ./courses/git/index.md
   - Web Servers: ./courses/webserver/index.md
   - Docker: ./courses/docker/index.md
-  # -----------------------------
-  # Kubernetes Course
-  # -----------------------------
   - Kubernetes:
       - Overview: ./courses/kubernetes/index.md
       - Setup:
@@ -305,10 +287,6 @@ nav:
   - GCP: ./courses/gcp/index.md
   - CI/CD: ./courses/cicd/index.md
   - Monitoring: ./courses/monitoring/index.md
-
-  # -----------------------------
-  # MLOps Course
-  # -----------------------------
   - MLOps:
       - Overview: ./courses/mlops/index.md
       - Setup: ./courses/mlops/01-setup/index.md
@@ -330,4 +308,22 @@ nav:
       - Projects: ./courses/mlops/17-projects/index.md
  
   - Lab Setup: ./lab-setup/index.md
-  - Cheat Sheet: ./courses/cheatsheet/index.md   
+  - Cheat Sheet: ./courses/cheatsheet/index.md
+  - Interview Q&A: ./courses/interviewqna/index.md  
+
+#    - Home: nav/home.yml
+#   - Linux: nav/linux.yml
+#   - Git/ Github: nav/git.yml
+#   - Web Servers: nav/webserver.yml
+#   - Docker: nav/docker.yml
+#   - Kubernetes: nav/kubernetes.yml
+#   - Ansible: nav/ansible.yml
+#   - AWS: nav/aws.yml
+#   - Azure: nav/azure.yml
+#   - GCP: nav/gcp.yml
+#   - CI/ CD: nav/cicd.yml
+#   - Monitoring: nav/monitoring.yml
+#   - MLOps: nav/mlops.yml
+#   - Lab Setup: nav/labsetup.yml
+#   - Cheat Sheet: nav/cheatsheet.yml
+#   - Interview: nav/interview.yml 

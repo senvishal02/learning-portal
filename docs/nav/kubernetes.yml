@@ -1,0 +1,37 @@
+- Kubernetes:
+    - Overview: ./courses/kubernetes/index.md
+    - Setup:
+        - Install Tools: ./courses/kubernetes/00-SETUP/01-tools-install.md
+        - Kind Cluster: ./courses/kubernetes/00-SETUP/02-kind-cluster/create-cluster.sh
+        - Minikube Install: ./courses/kubernetes/00-SETUP/03-minikube-install/install.md
+    - Core Workloads:
+        - Pods: ./courses/kubernetes/01-CORE-WORKLOADS/01-pods/README.md
+        - ReplicaSets: ./courses/kubernetes/01-CORE-WORKLOADS/02-replicasets/replicaset.yaml
+        - Deployments: ./courses/kubernetes/01-CORE-WORKLOADS/03-deployments/README.md
+        - DaemonSets: ./courses/kubernetes/01-CORE-WORKLOADS/04-daemonsets/daemonset.yaml
+        - StatefulSets: ./courses/kubernetes/01-CORE-WORKLOADS/05-statefulsets/statefulset-mysql.yaml
+        - Jobs & CronJobs: ./courses/kubernetes/01-CORE-WORKLOADS/06-jobs-cronjobs/job.yaml
+    - Networking:
+        - Services: ./courses/kubernetes/02-NETWORKING/01-services/clusterip.yaml
+        - Ingress: ./courses/kubernetes/02-NETWORKING/02-ingress/nginx-install.md
+        - DNS Communication: ./courses/kubernetes/02-NETWORKING/03-dns-communication/pod-to-pod-communication.md
+        - Network Policies: ./courses/kubernetes/02-NETWORKING/04-network-policies/network-policy.yaml
+    - Storage:
+        - Volumes: ./courses/kubernetes/04-STORAGE/01-volumes/emptydir.yaml
+        - Persistent Volumes: ./courses/kubernetes/04-STORAGE/02-persistent-volumes/pv.yaml
+        - Dynamic Provisioning: ./courses/kubernetes/04-STORAGE/03-dynamic-provisioning/dynamic-pvc.yaml
+    - Observability:
+        - Monitoring: ./courses/kubernetes/07-OBSERVABILITY/01-monitoring/prometheus-install.md
+        - Logging: ./courses/kubernetes/07-OBSERVABILITY/02-logging-efk/elasticsearch.yaml
+        - Alerting: ./courses/kubernetes/07-OBSERVABILITY/03-alertmanager/alertmanager-config.yaml
+    - Security:
+        - Pod Security: ./courses/kubernetes/08-SECURITY/01-pod-security/psp-psa.md
+        - Network Security: ./courses/kubernetes/08-SECURITY/02-network-security/zero-trust-policy.yaml
+        - Secrets Management: ./courses/kubernetes/08-SECURITY/03-secrets-management/vault-integration.md
+    - GitOps:
+        - ArgoCD: ./courses/kubernetes/10-GITOPS/01-argocd/argocd-install.md
+    - Projects:
+        - Fullstack App: ./courses/kubernetes/14-PROJECTS/01-fullstack-app
+        - Microservices Observability: ./courses/kubernetes/14-PROJECTS/02-microservices-observability
+        - CI/CD GitOps Pipeline: ./courses/kubernetes/14-PROJECTS/03-cicd-gitops-pipeline
+        - MLOps Pipeline: ./courses/kubernetes/14-PROJECTS/04-mlops-pipeline

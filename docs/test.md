@@ -38,7 +38,13 @@
 ---
 
 ### Example Script
+<div class="icon-toolbar" markdown>
 
+[:material-folder-eye:](https://github.com "View example"){ .course-link } 
+[:material-folder-download:](files/course.zip "Download example file"){ .course-link }
+[:material-folder-zip-outline:](files/course.zip "ZIP"){ .course-link } 
+
+</div>
 ```bash
 --8<-- "test.sh"
 ```

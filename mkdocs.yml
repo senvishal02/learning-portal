@@ -287,6 +287,9 @@ nav:
   - GCP: ./courses/gcp/index.md
   - CI/CD: ./courses/cicd/index.md
   - Monitoring: ./courses/monitoring/index.md
+  - Data Science:
+      - ./courses/datascience/index.md
+      - Introduction: ./courses/datascience/01-introduction/index.md
   - MLOps:
       - Overview: ./courses/mlops/index.md
       - Setup: ./courses/mlops/01-setup/index.md

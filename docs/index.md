@@ -177,6 +177,91 @@ Build strong foundations in **systems, automation, cloud platforms, and operatio
     - Logging
     - Observability tools
 
+- [:material-chart-line: **Data Science**](courses/datascience/index.md){ .course-link }  
+  :material-clock-outline: **Status:** <span style="color:#28a745;">Available</span>
+
+??? abstract "[View Topics](courses/datascience/index.md){ .course-link }"
+
+    Learn the fundamentals of data science including statistics, Python libraries, machine learning, NLP, and real-world projects.
+
+    **1: Introduction**
+    - Introduction to Data Science
+    - Data Science Process
+
+    **2: Statistical Analysis**
+    - Types of Statistics
+    - Types of Data
+    - Measures of Central Tendency
+    - Standard Deviation and Variance
+    - Covariance and Correlation
+    - Hypothesis Testing
+    - T-test, Z-test, P-values
+    - Chi-Square and ANOVA
+
+    **3: Linear Algebra & Probability**
+    - Scalars and Vectors
+    - Matrix Operations
+    - Eigenvalues and Eigenvectors
+    - Probability Distributions
+    - Bernoulli, Poisson, Normal Distribution
+    - Central Limit Theorem
+
+    **4: Web Scraping**
+    - HTML Basics
+    - BeautifulSoup Parsers
+    - Objects and Functions
+
+    **5: NumPy**
+    - NumPy Arrays
+    - Array Operations
+    - Array Slicing and Filtering
+    - Arithmetic and Statistical Functions
+
+    **6: Pandas**
+    - Series and DataFrames
+    - Importing CSV and Excel
+    - Data Cleaning
+    - Grouping and Filtering
+    - Joining DataFrames
+
+    **7: Data Visualization**
+    - Line Plot
+    - Bar Plot
+    - Scatter Plot
+    - Histogram
+    - Box Plot
+    - Heatmap
+    - KDE Plot
+
+    **8: Feature Engineering**
+    - Data Wrangling
+    - Handling Missing Values
+    - Feature Scaling
+    - Outlier Detection
+    - Encoding Techniques
+
+    **9: Machine Learning**
+    - Supervised Learning
+    - Unsupervised Learning
+    - Linear Regression
+    - Logistic Regression
+    - KNN
+    - Decision Tree
+    - Random Forest
+    - K-Means Clustering
+
+    **10: Natural Language Processing**
+    - Tokenization
+    - Lemmatization
+    - Stemming
+    - Bag of Words
+    - Naive Bayes NLP Project
+
+    **Projects**
+    - IPL and COVID-19 EDA
+    - Bike Sharing Demand Prediction
+    - Comcast Consumer Complaint Analysis
+
 - [:material-robot: **MLOps**](courses/mlops/index.md){ .course-link }  
   :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
 

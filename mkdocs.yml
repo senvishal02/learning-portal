@@ -290,6 +290,20 @@ nav:
   - Data Science:
       - ./courses/datascience/index.md
       - Introduction: ./courses/datascience/01-introduction/index.md
+      - NumPy: 
+        - ./courses/datascience/05-numpy/index.md
+        - Introduction : ./courses/datascience/05-numpy/01_numpy_introduction.md
+        - Arrays : ./courses/datascience/05-numpy/02_numpy_arrays.md
+        - Indexing Slicing : ./courses/datascience/05-numpy/03_numpy_indexing_slicing.md
+        - Broadcasting : ./courses/datascience/05-numpy/04_numpy_broadcasting.md
+        - Vectorization : ./courses/datascience/05-numpy/05_numpy_vectorization.md
+        - Math Statistics : ./courses/datascience/05-numpy/06_numpy_math_statistics.md
+        - Linear Algebra : ./courses/datascience/05-numpy/07_numpy_linear_algebra.md
+        - Random Module : ./courses/datascience/05-numpy/08_numpy_random_module.md
+        - Memory Optimization : ./courses/datascience/05-numpy/09_numpy_memory_optimization.md
+        - Performance Tips : ./courses/datascience/05-numpy/10_numpy_performance_tips.md
+        - Cheatsheet : ./courses/datascience/05-numpy/11-numpy_interview_cheatsheet.md
+
   - MLOps:
       - Overview: ./courses/mlops/index.md
       - Setup: ./courses/mlops/01-setup/index.md

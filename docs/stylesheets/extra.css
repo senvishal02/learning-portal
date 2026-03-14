@@ -1,13 +1,50 @@
-/* Reduce code block size */
+/* =====================================================
+   BASE TYPOGRAPHY
+===================================================== */
+
+.md-typeset {
+  line-height: 1.6;
+}
+
+.md-typeset h1 {
+  margin-top: 0;
+}
+
+.md-typeset h2,
+.md-typeset h3 {
+  margin-top: 1.5em;
+}
+
+
+
+/* =====================================================
+   CODE BLOCKS
+===================================================== */
+
 .md-typeset pre {
-  padding: 0.0rem;
+  padding: 0;
 }
 
 .md-typeset pre code {
   font-size: 0.8rem;
 }
 
-/* Right-side icon toolbar */
+
+
+/* =====================================================
+   GRID / LAYOUT
+===================================================== */
+
+.md-typeset .grid.cards {
+  gap: 1rem;
+}
+
+
+
+/* =====================================================
+   ICON TOOLBAR
+===================================================== */
+
 .icon-toolbar {
   display: flex;
   justify-content: flex-end;
@@ -15,53 +52,16 @@
   margin-bottom: 10px;
 }
 
-/* Toolbar buttons */
 .icon-toolbar a {
   padding: 6px 5px;
   border-radius: 6px;
 }
 
-/* Course card grid spacing */
-.md-typeset .grid.cards {
-  gap: 1rem;
-}
 
-/* Improve headings spacing */
-.md-typeset h1 {
-  margin-top: 0;
-}
-.course-preview {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
 
-.course-preview .preview-box {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 30px;
-  width: 300px;
-  background: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  z-index: 999;
-}
-
-.course-preview:hover .preview-box {
-  display: block;
-}
-
-.course-link {
-  color: #000 !important;
-  text-decoration: none;
-}
-
-.course-link:hover {
-  color: var(--md-accent-fg-color) !important;
-}
+/* =====================================================
+   TOOLTIP
+===================================================== */
 
 .tooltip {
   position: relative;
@@ -71,22 +71,181 @@
 
 .tooltip .tooltip-content {
   visibility: hidden;
-  width: 260px;
-  background-color: #1e1e1e;
-  color: #fff;
-  text-align: left;
-  border-radius: 6px;
-  padding: 10px;
   position: absolute;
-  z-index: 1;
   bottom: 120%;
   left: 0;
-  opacity: 0;
-  transition: opacity 0.2s;
+
+  width: 260px;
+  padding: 10px;
+
+  background: #1e1e1e;
+  color: #fff;
+
+  border-radius: 6px;
   font-size: 13px;
+
+  opacity: 0;
+  transition: opacity .2s;
 }
 
 .tooltip:hover .tooltip-content {
   visibility: visible;
   opacity: 1;
+}
+
+
+
+/* =====================================================
+   COURSE PREVIEW
+===================================================== */
+
+.course-preview {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.course-preview .preview-box {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+
+  width: 300px;
+  padding: 12px;
+
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  z-index: 999;
+}
+
+.course-preview:hover .preview-box {
+  display: block;
+}
+
+
+
+/* =====================================================
+   COURSE LINKS
+===================================================== */
+
+.course-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.course-title {
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: color .2s ease, background .2s ease;
+}
+
+.course-title:hover {
+  color: var(--md-accent-fg-color);
+  background: rgba(127,127,127,.08);
+}
+
+.course-title:hover .twemoji svg {
+  fill: var(--md-accent-fg-color);
+}
+
+/* =====================================================
+   COURSE LINK COLORS
+===================================================== */
+
+/* Light mode */
+[data-md-color-scheme="default"] .course-title,
+[data-md-color-scheme="default"] .course-link {
+  color: #000;
+}
+
+[data-md-color-scheme="default"] .twemoji svg {
+  fill: #000;
+}
+
+/* Dark mode (already exists but keeping clean) */
+[data-md-color-scheme="slate"] .course-title,
+[data-md-color-scheme="slate"] .course-status {
+  color: #fff;
+}
+
+[data-md-color-scheme="slate"] .twemoji svg {
+  fill: #fff;
+}
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+[data-md-color-scheme="default"] {
+  --course-bg: #f5f7fb;
+  --h1-color: #1A7DA4;
+  --h2-color: #11B7C5;
+  --h3-color: #EE653A;
+  --h4-color: #DD7F67;
+}
+
+[data-md-color-scheme="default"] body {
+  background: var(--course-bg);
+}
+
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+[data-md-color-scheme="slate"] {
+  --course-bg: #303446;
+  --h1-color: #11B7C5;
+  --h2-color: #4CFFD2;
+  --h3-color: #FFA600;
+  --h4-color: #DD7F67;
+}
+
+[data-md-color-scheme="slate"] body {
+  background: var(--course-bg);
+}
+
+[data-md-color-scheme="slate"] .course-title,
+[data-md-color-scheme="slate"] .course-status {
+  color: #fff;
+}
+
+[data-md-color-scheme="slate"] .twemoji svg {
+  fill: #fff;
+}
+
+
+
+/* =====================================================
+   HEADINGS (shared logic)
+===================================================== */
+
+.md-typeset h1 {
+  color: var(--h1-color);
+  border-bottom: 3px solid var(--h1-color);
+  padding-bottom: 6px;
+  font-weight: 900;
+}
+
+.md-typeset h2 {
+  color: var(--h2-color);
+  font-weight: 700;
+  border-left: 4px solid var(--h2-color);
+  padding-left: 10px;
+}
+
+.md-typeset h3 {
+  color: var(--h3-color);
+  font-weight: 700;
+}
+
+.md-typeset h4 {
+  color: var(--h4-color);
+  font-weight: 700;
 }

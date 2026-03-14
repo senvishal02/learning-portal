@@ -1,3 +1,20 @@
+## Tools and Technology
+
+<div class="grid cards cols-3" markdown>
+
+- [:material-linux: **Linux**](courses/linux/index.md){ .course-link .course-title }<br>
+  :material-clock-outline: **Status:** <span class="course-status">Coming Soon</span>
+
+??? abstract "[View Topics](courses/linux/index.md){ .course-link .course-title }"
+    Covers essential Linux administration concepts including:
+
+    - Introduction
+    - File System
+
+</div>
+
+---
+
 <div class="icon-toolbar" markdown>
 
 [:material-folder-eye:](https://github.com "View example"){ .course-link } 

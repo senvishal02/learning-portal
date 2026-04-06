@@ -1,3 +1,16 @@
+# 🖼️ Ways to Add Images in MkDocs
+## Basic Markdown (Most Common)
+![Alt text](assets/img/img1.png)
+
+
+
+## Multiple Images (Stacked)
+![Image1](assets/img/img1.png)
+![Image2](assets/img/img2.png)
+![Image3](assets/img/img3.png)
+![Image3](assets/img/img4.png)
+
+
 ## Tools and Technology
 
 <div class="grid cards cols-3" markdown>
@@ -22,6 +35,64 @@
 [:material-folder-zip-outline:](files/course.zip "ZIP"){ .course-link } 
 
 </div>
+
+---
+
+## Install curl
+
+=== "Debian / Ubuntu"
+
+    ```bash
+    sudo apt update
+    sudo apt install -y curl
+    ```
+
+    Verify:
+
+    ```bash
+    curl --version
+    ```
+
+=== "RHEL / CentOS / Fedora"
+
+    ```bash
+    sudo dnf install -y curl
+    ```
+
+    > For older systems:
+    ```bash
+    sudo yum install -y curl
+    ```
+
+    Verify:
+
+    ```bash
+    curl --version
+    ```
+
+
+
+=== "macOS"
+
+    #### Using Homebrew (Recommended)
+
+    ```bash
+    brew install curl
+    ```
+
+    #### Default (Pre-installed)
+
+    ```bash
+    curl --version
+    ```
+
+---
+
+## Example Usage
+
+```bash
+curl https://example.com
+```
 
 ---
 

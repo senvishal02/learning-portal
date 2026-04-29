@@ -1,20 +1,27 @@
-# Project information
-site_name: DevOps Courses
-site_description: Complete learning platform for DevOps, MLOps and AIOps Engineers
+# ── Site Identity ─────────────────────────────────────────────────────────────
+site_name: Vishal Sen | DevOps & MLOps
 site_author: Vishal Sen
 site_url: https://learning.vishal-connect.com
+site_description: >-
+  Production-grade learning platform for DevOps, 
+  MLOps, AIOps — courses, labs, projects, interview prep.
 
-# Configuration
+# ── Repository ────────────────────────────────────────────────────────────────
+# repo_name: yourusername/mkdocs-public
+# repo_url: https://github.com/yourusername/mkdocs-public
+# edit_uri: edit/main/docs/
+
+# ── Theme ────────────────────────────────────────────────────────────────
 theme:
   name: material
-  font:
-    text: Roboto
-    code: Roboto Mono
-  icon:
-    repo: fontawesome/brands/github
-    annotation: material/arrow-right-circle
-#   logo: assets/logo.png
-#   favicon: assets/favicon.ico
+  # custom_dir: docs/.overrides
+
+
+  # # Favicon & Logo
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+
+  # Color palette
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -35,20 +42,37 @@ theme:
         icon: material/toggle-switch-off
         name: Switch to system preference
 
+  # Font
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  # Icon
+  icon:
+    repo: fontawesome/brands/github
+    annotation: material/arrow-right-circle
+    logo: material/infinity
+
+  # Feature flags
   features:
     # Navigation
     - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - navigation.footer
     - navigation.tracking
     - navigation.expand
     - navigation.indexes
+    - navigation.path
 
     # Content
     - content.code.copy
     - content.code.annotate
+    - content.code.select
     - content.tabs.link
     - content.action.edit
     - content.action.view
@@ -62,14 +86,47 @@ theme:
     # TOC
     - toc.follow
 
+# ── Plugins ───────────────────────────────────────────────────────────────────
 plugins:
-  - tags
-  # - git-revision-date-localized
-#   - blog
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  # Blog support
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      post_url_max_categories: 2
+      archive: true
+      archive_name: Archive
+      archive_date_format: yyyy
+      categories: true
+      categories_name: Categories
+      categories_toc: true
+      authors: true
+      draft: true
+      draft_if_future_date: true
+
+  # Tags across all pages
+  - tags:
+      tags_file: tags.md
+
+  # # Auto-generate social share cards
+  # - social:
+  #     cards_layout_options:
+  #       background_color: "#1a1a2e"
+  #       color: "#ffffff"
+  #       font_family: Inter
+
+   # Minify HTML output for production       
   - minify:
       minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+        
+# ── Markdown Extensions ───────────────────────────────────────────────────────
 markdown_extensions:
   - abbr
   - admonition
@@ -77,8 +134,10 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - tables
   - toc:
       permalink: true
+      title: On this page
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -89,7 +148,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
       emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight:
-      linenums: false
+      linenums: true
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
@@ -98,230 +157,364 @@ markdown_extensions:
   - pymdownx.magiclink:
       normalize_issue_symbols: true
       repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+      user: senvishal02
+      repo: learning-portal
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       base_path: docs
       auto_append:
-        - includes/mkdocs.md
-        - includes/glossary.md
-  - pymdownx.superfences
+        - includes/abbreviations.md
+        # - includes/mkdocs.md
+        # - includes/glossary.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
   - pymdownx.tabbed:
       alternate_style: true
-      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
 
-
-
-
-extra:
-  generator: false
-  social:
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com
-    - icon: fontawesome/brands/github
-      link: https://github.com/senvishal02
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/vishalsen-connect
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/
-  analytics:
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+# ── Extra JavaScript & CSS ────────────────────────────────────────────────────
+extra_javascript:
+  # MathJax for LaTeX math rendering
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - assets/javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # Custom scripts
+  - assets/javascripts/extra.js
 
 extra_css:
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css  
+
+# ── Extra Config ──────────────────────────────────────────────────────────────
+extra:
+  generator: false
+  analytics:
+    provider: google
+    property: !ENV [GOOGLE_ANALYTICS_KEY, '']
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: Helpful
+          data: 1
+          note: Thanks for your feedback!
+
+        - icon: material/thumb-down-outline
+          name: Not helpful
+          data: 0
+          note: >-
+            Thanks for letting me know! You can
+            <a href="https://github.com/yourusername/mkdocs-public/issues/new?title=[Feedback]"
+               target="_blank" rel="noopener">open an issue</a> with suggestions.
+
+  # Cookie consent (GDPR)
+  consent:
+    title: Cookie consent
+    description: >-
+      This site uses cookies to measure traffic and recognise your preferences.
+      With your consent, you help make the content better.
+    actions:
+      - accept
+      - reject
+      - manage
+
+  # Social links (footer)
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/@senvishal02
+      name: YouTube Channel
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/senvishal02
+      name: GitHub Profile
+
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/senvishal02
+      name: LinkedIn
+      
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/senvishal02
+      name: Docker Hub
+  # Status badges for pages
+  status:
+    new: Recently added
+    deprecated: Deprecated
 
 # Copyright
-copyright: Copyright © 2026 Vishal Sen
+copyright: >
+  Copyright &copy; 2026 Vishal Sen &mdash;
+  <a href="#__consent">Manage cookies</a>
+
 
 not_in_nav: |
   ./courses/**/*.md
 
+# ── Navigation ────────────────────────────────────────────────────────────────
 nav:
-  - Home:
-    - index.md
-#   - Linux:
-#       - Overview: ./courses/linux/index.md
-#       - Introduction:
-#           - What is Linux: ./courses/linux/00-Introduction/01-What-is-Linux.md
-#           - Linux Architecture: ./courses/linux/00-Introduction/02-Linux-Architecture.md
-#           - Linux Distributions: ./courses/linux/00-Introduction/03-Linux-Distributions.md
-#           - Installation Guide: ./courses/linux/00-Introduction/04-Installation-Guide.md
+  - Home: index.md
+  - Tags: tags.md
 
-#       - File System:
-#           - Filesystem Hierarchy: ./courses/linux/01-File-System/01-Filesystem-Hierarchy.md
-#           - File & Directory Commands: ./courses/linux/01-File-System/02-File-Directory-Commands.md
-#           - Viewing & Editing Files: ./courses/linux/01-File-System/03-File-Viewing-Editing.md
+  # ── COURSES ──────────────────────────────────────────────────────────────
+  - Courses:
+      - courses/index.md
 
-#       - Users & Groups:
-#           - User Accounts: ./courses/linux/02-User-Group-Management/01-User-Accounts.md
-#           - Group Management: ./courses/linux/02-User-Group-Management/02-Group-Management.md
-#           - Password Policies: ./courses/linux/02-User-Group-Management/03-Password-Policies.md
+      - Linux:
+          - courses/linux/index.md
+          - Introduction: courses/linux/01-introduction.md
+          - File System & Navigation: courses/linux/02-filesystem.md
+          - Users & Permissions: courses/linux/03-permissions.md
+          - Processes & Jobs: courses/linux/04-processes.md
+          - Networking Basics: courses/linux/05-networking.md
+          - Shell Scripting: courses/linux/06-shell-scripting.md
+          - System Administration: courses/linux/07-sysadmin.md
+          - Performance Tuning: courses/linux/08-performance.md
 
-#       - Permissions:
-#           - Permission Model: ./courses/linux/03-Permissions/01-Permission-Model.md
-#           - Special Permissions: ./courses/linux/03-Permissions/02-Special-Permissions.md
-#           - ACL: ./courses/linux/03-Permissions/03-ACL.md
+      - Python for DevOps:
+          - courses/python/index.md
+          - Python Basics: courses/python/01-basics.md
+          - Automation Scripts: courses/python/02-automation.md
+          - Working with APIs: courses/python/03-apis.md
+          - Boto3 & AWS SDK: courses/python/04-boto3.md
+          - Testing & CI: courses/python/05-testing.md
 
-#       - Processes & Services:
-#           - Process Management: ./courses/linux/04-Process-Service-Management/01-Process-Management.md
-#           - Systemd Services: ./courses/linux/04-Process-Service-Management/02-Systemd-Services.md
-#           - Boot Process: ./courses/linux/04-Process-Service-Management/03-Boot-Process.md
+      - Git & GitHub:
+          - courses/git-github/index.md
+          - Git Fundamentals: courses/git-github/01-fundamentals.md
+          - Branching Strategies: courses/git-github/02-branching.md
+          - GitHub Actions: courses/git-github/03-github-actions.md
+          - GitOps Patterns: courses/git-github/04-gitops.md
 
-#       - Package Management:
-#           - Package Tools: ./courses/linux/05-Package-Management/01-Package-Tools.md
-#           - Repository Management: ./courses/linux/05-Package-Management/02-Repository-Management.md
+      - Ansible:
+          - courses/ansible/index.md
+          - Inventory & Ad-hoc: courses/ansible/01-inventory.md
+          - Playbooks: courses/ansible/02-playbooks.md
+          - Roles & Galaxy: courses/ansible/03-roles.md
+          - Vault & Secrets: courses/ansible/04-vault.md
+          - Real-world Patterns: courses/ansible/05-patterns.md
 
-#       - Storage:
-#           - Disk Management: ./courses/linux/06-Storage-Management/01-Disk-Management.md
-#           - Filesystems: ./courses/linux/06-Storage-Management/02-Filesystems.md
-#           - LVM: ./courses/linux/06-Storage-Management/03-LVM.md
-#           - RAID: ./courses/linux/06-Storage-Management/04-RAID.md
+      - Docker:
+          - courses/docker/index.md
+          - Containers 101: courses/docker/01-containers.md
+          - Dockerfile Deep Dive: courses/docker/02-dockerfile.md
+          - Networking & Volumes: courses/docker/03-networking.md
+          - Docker Compose: courses/docker/04-compose.md
+          - Registry & Security: courses/docker/05-registry.md
+          - Production Best Practices: courses/docker/06-production.md
 
-#       - Networking:
-#           - Network Basics: ./courses/linux/07-Networking/01-Network-Basics.md
-#           - Network Commands: ./courses/linux/07-Networking/02-Network-Commands.md
-#           - Network Configuration: ./courses/linux/07-Networking/03-Network-Configuration.md
+      - Kubernetes:
+          - courses/kubernetes/index.md
+          - Architecture: courses/kubernetes/01-architecture.md
+          - Pods & Workloads: courses/kubernetes/02-workloads.md
+          - Services & Networking: courses/kubernetes/03-networking.md
+          - Storage: courses/kubernetes/04-storage.md
+          - RBAC & Security: courses/kubernetes/05-rbac.md
+          - Helm: courses/kubernetes/06-helm.md
+          - Monitoring & Logging: courses/kubernetes/07-monitoring.md
+          - Production Patterns: courses/kubernetes/08-production.md
+          - CKA Exam Prep: courses/kubernetes/09-cka-prep.md
 
-#       - SSH & Remote Access:
-#           - SSH Configuration: ./courses/linux/08-SSH-Remote-Access/01-SSH-Configuration.md
-#           - Secure SSH: ./courses/linux/08-SSH-Remote-Access/02-Secure-SSH.md
-#           - SCP & Rsync: ./courses/linux/08-SSH-Remote-Access/03-SCP-RSYNC.md
+      - Jenkins:
+          - courses/jenkins/index.md
+          - Setup & Architecture: courses/jenkins/01-setup.md
+          - Pipelines as Code: courses/jenkins/02-pipelines.md
+          - Shared Libraries: courses/jenkins/03-shared-libraries.md
+          - Jenkins + Docker/K8s: courses/jenkins/04-containers.md
+          - Security & Best Practices: courses/jenkins/05-security.md
 
-#       - Web Server:
-#           - Apache: ./courses/linux/09-Web-Server/01-Apache.md
-#           - Nginx: ./courses/linux/09-Web-Server/02-Nginx.md
-#           - SSL Setup: ./courses/linux/09-Web-Server/03-SSL-Setup.md
+      - Terraform:
+          - courses/terraform/index.md
+          - HCL Fundamentals: courses/terraform/01-hcl.md
+          - State Management: courses/terraform/02-state.md
+          - Modules: courses/terraform/03-modules.md
+          - Terragrunt: courses/terraform/04-terragrunt.md
+          - CI/CD with Terraform: courses/terraform/05-cicd.md
+          - Testing with Terratest: courses/terraform/06-testing.md
+          - Multi-cloud Patterns: courses/terraform/07-multicloud.md
 
-#       - Security:
-#           - Firewall: ./courses/linux/10-Security/01-Firewall.md
-#           - SELinux: ./courses/linux/10-Security/02-SELinux.md
-#           - System Hardening: ./courses/linux/10-Security/03-System-Hardening.md
+      - AWS:
+          - courses/aws/index.md
+          - Core Services: courses/aws/01-core.md
+          - Compute (EC2, ECS, Lambda): courses/aws/02-compute.md
+          - Networking (VPC, Route53): courses/aws/03-networking.md
+          - Storage & Databases: courses/aws/04-storage.md
+          - IAM & Security: courses/aws/05-iam.md
+          - Cost Optimization: courses/aws/06-cost.md
+          - Well-Architected Framework: courses/aws/07-well-architected.md
+          - SAA-C03 Exam Prep: courses/aws/08-saa-prep.md
 
-#       - Shell Scripting:
-#           - Bash Basics: ./courses/linux/11-Shell-Scripting/01-Bash-Basics.md
-#           - Control Statements: ./courses/linux/11-Shell-Scripting/02-Control-Statements.md
-#           - Automation Scripts: ./courses/linux/11-Shell-Scripting/03-Automation-Scripts.md
+      - Azure:
+          - courses/azure/index.md
+          - Core Services: courses/azure/01-core.md
+          - AKS (Azure Kubernetes): courses/azure/02-aks.md
+          - Azure DevOps: courses/azure/03-azure-devops.md
+          - Security & Compliance: courses/azure/04-security.md
 
-#       - Logs & Monitoring:
-#           - Log Files: ./courses/linux/12-Logs-Monitoring/01-Log-Files.md
-#           - Monitoring Tools: ./courses/linux/12-Logs-Monitoring/02-Monitoring-Tools.md
+      - Machine Learning:
+          - courses/ml/index.md
+          - ML Fundamentals: courses/ml/01-fundamentals.md
+          - Scikit-learn: courses/ml/02-sklearn.md
+          - Deep Learning Basics: courses/ml/03-deep-learning.md
+          - Model Evaluation: courses/ml/04-evaluation.md
 
-#       - Backup & Recovery:
-#           - Backup Tools: ./courses/linux/13-Backup-Recovery/01-Backup-Tools.md
-#           - Disaster Recovery: ./courses/linux/13-Backup-Recovery/02-Disaster-Recovery.md
+      - Data Science:
+          - courses/data-science/index.md
+          - Data Engineering Basics: courses/data-science/01-data-engineering.md
+          - Pandas & NumPy: courses/data-science/02-pandas.md
+          - EDA & Visualization: courses/data-science/03-eda.md
+          - Feature Engineering: courses/data-science/04-features.md
 
-#       - Advanced Administration:
-#           - Docker: ./courses/linux/14-Advanced-Administration/01-Docker.md
-#           - Ansible: ./courses/linux/14-Advanced-Administration/02-Ansible.md
-#           - Virtualization: ./courses/linux/14-Advanced-Administration/03-Virtualization.md
-#           - Performance Tuning: ./courses/linux/14-Advanced-Administration/04-Performance-Tuning.md
+      - MLOps:
+          - courses/mlops/index.md
+          - MLOps Principles: courses/mlops/01-principles.md
+          - ML Pipelines: courses/mlops/02-pipelines.md
+          - Model Registry & Versioning: courses/mlops/03-registry.md
+          - Model Serving & APIs: courses/mlops/04-serving.md
+          - Feature Stores: courses/mlops/05-feature-stores.md
+          - ML Monitoring & Drift: courses/mlops/06-monitoring.md
+          - Kubeflow: courses/mlops/07-kubeflow.md
+          - MLflow: courses/mlops/08-mlflow.md
+          - LLMOps: courses/mlops/09-llmops.md
 
-#       - Projects:
-#           - Production Web Server Setup: ./courses/linux/15-Projects/01-Production-Web-Server-Setup.md
-#           - Secure SSH Server: ./courses/linux/15-Projects/02-Secure-SSH-Server.md
-#           - LVM RAID Implementation: ./courses/linux/15-Projects/03-LVM-RAID-Implementation.md
-#           - Automated Backup System: ./courses/linux/15-Projects/04-Automated-Backup-System.md
-#   - Git/ Github: ./courses/git/index.md
-#   - Web Servers: ./courses/webserver/index.md
-#   - Docker: ./courses/docker/index.md
-#   - Kubernetes:
-#       - Overview: ./courses/kubernetes/index.md
-#       - Setup:
-#           - Install Tools: ./courses/kubernetes/00-SETUP/01-tools-install.md
-#           - Kind Cluster: ./courses/kubernetes/00-SETUP/02-kind-cluster/create-cluster.sh
-#           - Minikube Install: ./courses/kubernetes/00-SETUP/03-minikube-install/install.md
+      - AIOps:
+          - courses/aiops/index.md
+          - AIOps Overview: courses/aiops/01-overview.md
+          - AI-Driven Monitoring: courses/aiops/02-monitoring.md
+          - Anomaly Detection: courses/aiops/03-anomaly.md
+          - AI-Assisted Incident Response: courses/aiops/04-incident.md
+          - AI in CI/CD: courses/aiops/05-cicd.md
+          - LLMs for DevOps: courses/aiops/06-llms.md
 
-#       - Core Workloads:
-#           - Pods: ./courses/kubernetes/01-CORE-WORKLOADS/01-pods/README.md
-#           - ReplicaSets: ./courses/kubernetes/01-CORE-WORKLOADS/02-replicasets/replicaset.yaml
-#           - Deployments: ./courses/kubernetes/01-CORE-WORKLOADS/03-deployments/README.md
-#           - DaemonSets: ./courses/kubernetes/01-CORE-WORKLOADS/04-daemonsets/daemonset.yaml
-#           - StatefulSets: ./courses/kubernetes/01-CORE-WORKLOADS/05-statefulsets/statefulset-mysql.yaml
-#           - Jobs & CronJobs: ./courses/kubernetes/01-CORE-WORKLOADS/06-jobs-cronjobs/job.yaml
+  # ── INTERVIEW PREP ───────────────────────────────────────────────────────
+  - Interview Prep:
+      - interview-prep/index.md
 
-#       - Networking:
-#           - Services: ./courses/kubernetes/02-NETWORKING/01-services/clusterip.yaml
-#           - Ingress: ./courses/kubernetes/02-NETWORKING/02-ingress/nginx-install.md
-#           - DNS Communication: ./courses/kubernetes/02-NETWORKING/03-dns-communication/pod-to-pod-communication.md
-#           - Network Policies: ./courses/kubernetes/02-NETWORKING/04-network-policies/network-policy.yaml
+      - DevOps Interviews:
+          - interview-prep/devops/index.md
+          - Core Concepts: interview-prep/devops/core-concepts.md
+          - CI/CD Questions: interview-prep/devops/cicd.md
+          - Containerisation: interview-prep/devops/containers.md
+          - Kubernetes Q&A: interview-prep/devops/kubernetes.md
+          - Scripting & Automation: interview-prep/devops/scripting.md
+          - Behavioral Questions: interview-prep/devops/behavioral.md
+          - Company-wise (FAANG): interview-prep/devops/faang.md
+          - Company-wise (Startups): interview-prep/devops/startups.md
 
-#       - Storage:
-#           - Volumes: ./courses/kubernetes/04-STORAGE/01-volumes/emptydir.yaml
-#           - Persistent Volumes: ./courses/kubernetes/04-STORAGE/02-persistent-volumes/pv.yaml
-#           - Dynamic Provisioning: ./courses/kubernetes/04-STORAGE/03-dynamic-provisioning/dynamic-pvc.yaml
+      - SRE Interviews:
+          - interview-prep/sre/index.md
+          - SRE Concepts & SLOs: interview-prep/sre/concepts.md
+          - On-call & Incident Mgmt: interview-prep/sre/incidents.md
+          - Toil & Automation: interview-prep/sre/toil.md
+          - System Design for SRE: interview-prep/sre/system-design.md
 
-#       - Observability:
-#           - Monitoring: ./courses/kubernetes/07-OBSERVABILITY/01-monitoring/prometheus-install.md
-#           - Logging: ./courses/kubernetes/07-OBSERVABILITY/02-logging-efk/elasticsearch.yaml
-#           - Alerting: ./courses/kubernetes/07-OBSERVABILITY/03-alertmanager/alertmanager-config.yaml
+      - MLOps Interviews:
+          - interview-prep/mlops/index.md
+          - ML System Design: interview-prep/mlops/system-design.md
+          - MLOps Concepts: interview-prep/mlops/concepts.md
+          - Coding Rounds: interview-prep/mlops/coding.md
+          - Company-wise (AI/ML): interview-prep/mlops/companies.md
 
-#       - Security:
-#           - Pod Security: ./courses/kubernetes/08-SECURITY/01-pod-security/psp-psa.md
-#           - Network Security: ./courses/kubernetes/08-SECURITY/02-network-security/zero-trust-policy.yaml
-#           - Secrets Management: ./courses/kubernetes/08-SECURITY/03-secrets-management/vault-integration.md
+      - Cloud Interviews:
+          - interview-prep/cloud/index.md
+          - AWS Interview Questions: interview-prep/cloud/aws.md
+          - Azure Interview Questions: interview-prep/cloud/azure.md
+          - GCP Interview Questions: interview-prep/cloud/gcp.md
+          - Multi-cloud & Architecture: interview-prep/cloud/architecture.md
+          - Cost Optimisation Q&A: interview-prep/cloud/cost.md
 
-#       - GitOps:
-#           - ArgoCD: ./courses/kubernetes/10-GITOPS/01-argocd/argocd-install.md
+  # ── LABS ────────────────────────────────────────────────────────────────
+  - Labs:
+      - labs/index.md
 
-#       - Projects:
-#           - Fullstack App: ./courses/kubernetes/14-PROJECTS/01-fullstack-app
-#           - Microservices Observability: ./courses/kubernetes/14-PROJECTS/02-microservices-observability
-#           - CI/CD GitOps Pipeline: ./courses/kubernetes/14-PROJECTS/03-cicd-gitops-pipeline
-#           - MLOps Pipeline: ./courses/kubernetes/14-PROJECTS/04-mlops-pipeline
+      - Kubernetes Labs:
+          - labs/kubernetes-labs/index.md
+          - Lab 01 — Deploy a Stateless App: labs/kubernetes-labs/lab-01-stateless-app.md
+          - Lab 02 — PersistentVolumes: labs/kubernetes-labs/lab-02-pv-pvc.md
+          - Lab 03 — Ingress & TLS: labs/kubernetes-labs/lab-03-ingress.md
+          - Lab 04 — RBAC Deep Dive: labs/kubernetes-labs/lab-04-rbac.md
+          - Lab 05 — HPA & VPA: labs/kubernetes-labs/lab-05-autoscaling.md
+          - Lab 06 — Network Policies: labs/kubernetes-labs/lab-06-network-policies.md
+          - Lab 07 — Helm Chart Authoring: labs/kubernetes-labs/lab-07-helm.md
+          - Lab 08 — Canary Deployments: labs/kubernetes-labs/lab-08-canary.md
+      - Docker Labs:
+          - labs/docker-labs/index.md
+          - Lab 01 — Multi-stage Builds: labs/docker-labs/lab-01-multistage.md
+          - Lab 02 — Docker Networking: labs/docker-labs/lab-02-networking.md
+          - Lab 03 — Docker Compose Stack: labs/docker-labs/lab-03-compose.md
+          - Lab 04 — Image Security Scanning: labs/docker-labs/lab-04-security.md
 
-#   - Ansible: ./courses/ansible/index.md
-#   - AWS: ./courses/aws/index.md
-#   - Azure: ./courses/azure/index.md
-#   - GCP: ./courses/gcp/index.md
-#   - CI/CD: ./courses/cicd/index.md
-#   - Monitoring: ./courses/monitoring/index.md
-  - Data Science:
-      - ./courses/datascience/index.md
-      - Introduction: ./courses/datascience/01-introduction/index.md
-      - NumPy: 
-        - ./courses/datascience/05-numpy/index.md
-        - Introduction : ./courses/datascience/05-numpy/01_numpy_introduction.md
-        - Introductionv2 : ./courses/datascience/05-numpy/numpy.md
-        - Arrays : ./courses/datascience/05-numpy/02_numpy_arrays.md
-        - Indexing Slicing : ./courses/datascience/05-numpy/03_numpy_indexing_slicing.md
-        - Broadcasting : ./courses/datascience/05-numpy/04_numpy_broadcasting.md
-        - Vectorization : ./courses/datascience/05-numpy/05_numpy_vectorization.md
-        - Math Statistics : ./courses/datascience/05-numpy/06_numpy_math_statistics.md
-        - Linear Algebra : ./courses/datascience/05-numpy/07_numpy_linear_algebra.md
-        - Random Module : ./courses/datascience/05-numpy/08_numpy_random_module.md
-        - Memory Optimization : ./courses/datascience/05-numpy/09_numpy_memory_optimization.md
-        - Performance Tips : ./courses/datascience/05-numpy/10_numpy_performance_tips.md
-        - Cheatsheet : ./courses/datascience/05-numpy/11-numpy_interview_cheatsheet.md
+      - Terraform Labs:
+          - labs/terraform-labs/index.md
+          - Lab 01 — AWS VPC with Terraform: labs/terraform-labs/lab-01-vpc.md
+          - Lab 02 — Modules & Reuse: labs/terraform-labs/lab-02-modules.md
+          - Lab 03 — Remote State (S3 + DynamoDB): labs/terraform-labs/lab-03-remote-state.md
+          - Lab 04 — Terragrunt Patterns: labs/terraform-labs/lab-04-terragrunt.md
+          - Lab 05 — Drift Detection: labs/terraform-labs/lab-05-drift.md
 
-#   - MLOps:
-#       - Overview: ./courses/mlops/index.md
-#       - Setup: ./courses/mlops/01-setup/index.md
-#       - Data: ./courses/mlops/02-data/index.md
-#       - Source Code: ./courses/mlops/03-src/index.md
-#       - Notebooks: ./courses/mlops/04-notebooks/index.md
-#       - DVC: ./courses/mlops/05-dvc/index.md
-#       - Experiments: ./courses/mlops/06-experiments/index.md
-#       - Serving: ./courses/mlops/07-serving/index.md
-#       - Tests: ./courses/mlops/08-tests/index.md
-#       - CI/CD: ./courses/mlops/09-ci-cd/index.md
-#       - Kubernetes Deployment: ./courses/mlops/10-k8s/index.md
-#       - Kubeflow: ./courses/mlops/11-kubeflow/index.md
-#       - GitOps: ./courses/mlops/12-gitops/index.md
-#       - Monitoring: ./courses/mlops/13-monitoring/index.md
-#       - Model Monitoring: ./courses/mlops/14-monitoring-ml/index.md
-#       - Feature Store: ./courses/mlops/15-feature-store/index.md
-#       - Terraform: ./courses/mlops/16-terraform/index.md
-#       - Projects: ./courses/mlops/17-projects/index.md
- 
-#   - Lab Setup: ./lab-setup/index.md
-#   - Cheat Sheet: ./courses/cheatsheet/index.md
-#   - Interview Q&A: ./courses/interviewqna/index.md  
+      - MLOps Labs:
+          - labs/mlops-labs/index.md
+          - Lab 01 — MLflow Tracking Server: labs/mlops-labs/lab-01-mlflow.md
+          - Lab 02 — Kubeflow Pipelines: labs/mlops-labs/lab-02-kubeflow.md
+          - Lab 03 — Model Serving with BentoML: labs/mlops-labs/lab-03-bentoml.md
+          - Lab 04 — Feature Store with Feast: labs/mlops-labs/lab-04-feast.md
+          - Lab 05 — LLM API Deployment: labs/mlops-labs/lab-05-llm-api.md
+
+  # ── PROJECTS ─────────────────────────────────────────────────────────────
   - Projects:
-      - ./courses/projects/index.md
-      - Nextcloud: ./courses/projects/nextcloud/index.md
+      - projects/index.md
+
+      - DevOps Projects:
+          - projects/devops-projects/index.md
+          - End-to-End CI/CD Pipeline (GitHub Actions + K8s): projects/devops-projects/cicd-pipeline.md
+          - GitOps with ArgoCD: projects/devops-projects/gitops-argocd.md
+          - EKS Production Cluster (Terraform): projects/devops-projects/eks-terraform.md
+          - Observability Stack (Prometheus + Grafana + Loki): projects/devops-projects/observability.md
+          - Self-hosted GitHub Runner (K8s): projects/devops-projects/self-hosted-runner.md
+
+      - MLOps Projects:
+          - projects/mlops-projects/index.md
+          - End-to-End ML Pipeline on K8s: projects/mlops-projects/ml-pipeline-k8s.md
+          - LLMOps Platform (RAG + Monitoring): projects/mlops-projects/llmops-platform.md
+          - Real-time Model Inference API: projects/mlops-projects/inference-api.md
+          - AI-Powered Log Analysis: projects/mlops-projects/ai-log-analysis.md
+
+      - Automation Projects:
+          - projects/automation-projects/index.md
+          - Cost Optimisation Bot (AWS): projects/automation-projects/cost-bot.md
+          - Auto-Remediation Framework: projects/automation-projects/auto-remediation.md
+          - Infrastructure Drift Reporter: projects/automation-projects/drift-reporter.md
+
+  # ── CHEATSHEETS ──────────────────────────────────────────────────────────
+  - Cheatsheets:
+      - cheatsheets/index.md
+      - Linux: cheatsheets/linux.md
+      - Git: cheatsheets/git.md
+      - Docker: cheatsheets/docker.md
+      - Kubernetes: cheatsheets/kubernetes.md
+      - Terraform: cheatsheets/terraform.md
+      - Ansible: cheatsheets/ansible.md
+      - Helm: cheatsheets/helm.md
+      - AWS CLI: cheatsheets/aws-cli.md
+      - Python (DevOps): cheatsheets/python-devops.md
+      - Bash Scripting: cheatsheets/bash.md
+
+  # ── ROADMAPS ─────────────────────────────────────────────────────────────
+  - Roadmaps:
+      - roadmap/index.md
+      - DevOps Engineer Roadmap: roadmap/devops-roadmap.md
+      - MLOps Engineer Roadmap: roadmap/mlops-roadmap.md
+      - Platform Engineering Roadmap: roadmap/platform-engineering-roadmap.md
+      - DevSecOps Roadmap: roadmap/devsecops-roadmap.md
+      - Cloud Architect Roadmap: roadmap/cloud-architect-roadmap.md
+
+  # ── BLOG ─────────────────────────────────────────────────────────────────
+  - Blog:
+      - blog/index.md

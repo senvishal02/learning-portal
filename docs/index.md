@@ -1,345 +1,196 @@
-# Engineering Learning Hub
-
-> Practical courses for modern infrastructure, cloud, and platform technologies.
-
-This learning platform provides **structured technical courses**, **hands-on labs**, and **real-world engineering practices** used in modern infrastructure environments.
-
-Build strong foundations in **systems, automation, cloud platforms, and operational tooling**.
-
+---
+title: Home
+description: DevOps & MLOps Learning Hub — notes, labs, interview prep, and real-world projects
+hide:
+  - navigation
+  - toc
 ---
 
-## Tools and Technology
+# Welcome to the DevOps & MLOps Learning Hub
 
-<div class="grid cards cols-3" markdown>
+<div class="grid cards" markdown>
 
-- [:material-linux: **Linux**](courses/linux/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-  <!-- :material-progress-clock: **Status:** <span style="color:#ef6c00;">In Progress</span> -->
-  <!-- :material-check-circle: **Status:** <span style="color:#2e7d32;">Available</span> -->
+-   :material-rocket-launch:{ .lg .middle } **Start Learning**
 
-??? abstract "[View Topics](courses/linux/index.md){ .course-link }"
+    ---
 
-    Covers essential Linux administration concepts including:
+    Structured courses from Linux fundamentals through Kubernetes, Terraform, and LLMOps. Built from 7+ years of production experience.
 
-    - Introduction
-    - File System
-    - User Group Management
-    - Permissions
-    - Process & Service Management
-    - Package Management
-    - Storage Management
-    - Networking
-    - SSH Remote Access
-    - Web Server
-    - Security
-    - Shell Scripting
-    - Logs Monitoring
-    - Backup Recovery
-    - Advanced Administration
-    - Projects
+    [:octicons-arrow-right-24: Browse Courses](courses/index.md)
 
+-   :material-flask-outline:{ .lg .middle } **Hands-on Labs**
 
-- [:material-git: **Git / GitHub**](courses/git/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
+    ---
 
-??? abstract "[View Topics](courses/git/index.md){ .course-link }"
+    Step-by-step labs with real environments. No theory-only content — everything runs in your terminal.
 
-    Learn version control and collaboration using Git.
+    [:octicons-arrow-right-24: Go to Labs](labs/index.md)
 
-    - Git fundamentals
-    - Branching and merging
-    - GitHub workflows
-    - Pull requests
-    - Collaboration strategies
+-   :material-briefcase-outline:{ .lg .middle } **Real Projects**
 
+    ---
 
-- [:material-web: **Web Servers**](courses/webserver/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
+    Portfolio-ready projects with full source code. CI/CD pipelines, GitOps, MLOps platforms, AIOps tools.
 
-??? abstract "[View Topics](courses/webserver/index.md){ .course-link }"
+    [:octicons-arrow-right-24: View Projects](projects/index.md)
 
-    Learn how web servers work and how to configure them.
+-   :material-head-lightbulb-outline:{ .lg .middle } **Interview Prep**
 
-    - HTTP fundamentals
-    - Nginx configuration
-    - Apache configuration
-    - Reverse proxy
-    - SSL and security
+    ---
 
+    Company-specific question banks for DevOps, SRE, MLOps, and Cloud architect roles at FAANG and beyond.
 
-- [:material-docker: **Docker**](courses/docker/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/docker/index.md){ .course-link }"
-
-    Learn containerization using Docker.
-
-    - Docker architecture
-    - Images and containers
-    - Docker networking
-    - Docker volumes
-    - Docker Compose
-
-
-- [:material-kubernetes: **Kubernetes**](courses/kubernetes/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/kubernetes/index.md){ .course-link }"
-
-    Learn container orchestration with Kubernetes.
-
-    - Kubernetes architecture
-    - Pods and deployments
-    - Services and networking
-    - ConfigMaps and secrets
-    - Helm and operators
-
-
-- [:material-ansible: **Ansible**](courses/ansible/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/ansible/index.md){ .course-link }"
-
-    Learn infrastructure automation using Ansible.
-
-    - Playbooks and roles
-    - Inventory management
-    - Configuration automation
-    - Infrastructure orchestration
-
-
-- [:material-aws: **AWS**](courses/aws/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/aws/index.md){ .course-link }"
-
-    Learn cloud infrastructure using AWS.
-
-    - IAM
-    - EC2
-    - VPC networking
-    - S3 storage
-    - Infrastructure automation
-
-
-- [:material-microsoft-azure: **Azure**](courses/azure/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/azure/index.md){ .course-link }"
-
-    Learn cloud services using Microsoft Azure.
-
-    - Azure fundamentals
-    - Virtual machines
-    - Networking
-    - Storage
-    - Identity management
-
-
-- [:material-google-cloud: **GCP**](courses/gcp/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/gcp/index.md){ .course-link }"
-
-    Learn Google Cloud Platform services.
-
-    - Compute Engine
-    - VPC networking
-    - Cloud Storage
-    - IAM
-    - DevOps tools
-
-
-- [:material-gitlab: **CI/CD**](courses/cicd/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/cicd/index.md){ .course-link }"
-
-    Learn continuous integration and deployment.
-
-    - CI/CD pipelines
-    - GitHub Actions
-    - Jenkins
-    - GitOps workflows
-    - Deployment strategies
-
-
-- [:material-chart-line: **Monitoring**](courses/monitoring/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/monitoring/index.md){ .course-link }"
-
-    Learn monitoring and observability.
-
-    - Prometheus
-    - Grafana dashboards
-    - Alerting systems
-    - Logging
-    - Observability tools
-
-- [:material-chart-line: **Data Science**](courses/datascience/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#28a745;">Available</span>
-
-??? abstract "[View Topics](courses/datascience/index.md){ .course-link }"
-
-    Learn the fundamentals of data science including statistics, Python libraries, machine learning, NLP, and real-world projects.
-
-    **1: Introduction**
-    - Introduction to Data Science
-    - Data Science Process
-
-    **2: Statistical Analysis**
-    - Types of Statistics
-    - Types of Data
-    - Measures of Central Tendency
-    - Standard Deviation and Variance
-    - Covariance and Correlation
-    - Hypothesis Testing
-    - T-test, Z-test, P-values
-    - Chi-Square and ANOVA
-
-    **3: Linear Algebra & Probability**
-    - Scalars and Vectors
-    - Matrix Operations
-    - Eigenvalues and Eigenvectors
-    - Probability Distributions
-    - Bernoulli, Poisson, Normal Distribution
-    - Central Limit Theorem
-
-    **4: Web Scraping**
-    - HTML Basics
-    - BeautifulSoup Parsers
-    - Objects and Functions
-
-    **5: NumPy**
-    - NumPy Arrays
-    - Array Operations
-    - Array Slicing and Filtering
-    - Arithmetic and Statistical Functions
-
-    **6: Pandas**
-    - Series and DataFrames
-    - Importing CSV and Excel
-    - Data Cleaning
-    - Grouping and Filtering
-    - Joining DataFrames
-
-    **7: Data Visualization**
-    - Line Plot
-    - Bar Plot
-    - Scatter Plot
-    - Histogram
-    - Box Plot
-    - Heatmap
-    - KDE Plot
-
-    **8: Feature Engineering**
-    - Data Wrangling
-    - Handling Missing Values
-    - Feature Scaling
-    - Outlier Detection
-    - Encoding Techniques
-
-    **9: Machine Learning**
-    - Supervised Learning
-    - Unsupervised Learning
-    - Linear Regression
-    - Logistic Regression
-    - KNN
-    - Decision Tree
-    - Random Forest
-    - K-Means Clustering
-
-    **10: Natural Language Processing**
-    - Tokenization
-    - Lemmatization
-    - Stemming
-    - Bag of Words
-    - Naive Bayes NLP Project
-
-    **Projects**
-    - IPL and COVID-19 EDA
-    - Bike Sharing Demand Prediction
-    - Comcast Consumer Complaint Analysis
-
-- [:material-robot: **MLOps**](courses/mlops/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[View Topics](courses/mlops/index.md){ .course-link }"
-
-    Learn how to build, deploy, and operate machine learning systems in production.
-
-    - Introduction to MLOps
-    - ML Lifecycle & Workflow
-    - Data Versioning
-    - Experiment Tracking
-    - Model Training Pipelines
-    - Model Registry
-    - CI/CD for Machine Learning
-    - Containerization for ML
-    - Kubernetes for ML Workloads
-    - Feature Stores
-    - Model Deployment Strategies
-    - Monitoring & Observability
-    - Model Drift Detection
-    - Retraining Pipelines
-    - ML Security & Governance
-    - Real-world MLOps Projects
-    
-- [:material-flask-outline: **Lab Setup**](lab-setup/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[Lab Setup Guide](lab-setup/index.md){ .course-link }"
-
-    Prepare your learning environment.
-
-    - Local lab setup
-    - Virtual machines
-    - Docker environments
-    - Cloud labs
-
-
-- [:material-file-document-outline: **Cheat Sheets**](courses/cheatsheet/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[Cheat Sheet Collection](courses/cheatsheet/index.md){ .course-link }"
-
-    Quick reference guides.
-
-    - Linux commands
-    - Git commands
-    - Docker commands
-    - Kubernetes commands
-
-- [:material-account-supervisor-outline: **Interview Q&A**](courses/interviewqna/index.md){ .course-link }  
-  :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>
-
-??? abstract "[Cheat Sheet Collection](courses/interviewqna/index.md){ .course-link }"
-
-    Quick reference guides.
-
-    - Linux Interview
-    - Git Interview
-    - Docker Interview
-    - Kubernetes commands
+    [:octicons-arrow-right-24: Start Prep](interview-prep/index.md)
 
 </div>
 
 ---
-## Learning Approach
 
-The platform emphasizes **practical engineering knowledge** through:
+## Learning Roadmaps
 
-- Hands-on exercises
-- Real system scenarios
-- Infrastructure workflows
-- Automation practices
-- Production-oriented tools
+Choose your path and follow a structured progression from beginner to production-ready engineer.
+
+=== "DevOps Engineer"
+
+    ```
+    Linux → Python → Git → Docker → Kubernetes → CI/CD
+    → Terraform → AWS/Azure → Monitoring → DevSecOps
+    ```
+    [:octicons-arrow-right-24: DevOps Roadmap](roadmap/devops-roadmap.md)
+
+=== "MLOps Engineer"
+
+    ```
+    Python → ML Basics → Data Engineering → ML Pipelines
+    → MLflow → Kubeflow → Model Serving → LLMOps
+    ```
+    [:octicons-arrow-right-24: MLOps Roadmap](roadmap/mlops-roadmap.md)
+
+=== "Platform Engineer"
+
+    ```
+    Kubernetes → Helm → GitOps → Service Mesh
+    → Internal Developer Platform → FinOps
+    ```
+    [:octicons-arrow-right-24: Platform Engineering Roadmap](roadmap/platform-engineering-roadmap.md)
+
+=== "Cloud Architect"
+
+    ```
+    AWS/Azure/GCP Core → Networking → Security → IaC
+    → Well-Architected → Multi-cloud → Cost Optimisation
+    ```
+    [:octicons-arrow-right-24: Cloud Architect Roadmap](roadmap/cloud-architect-roadmap.md)
 
 ---
 
-## Maintained By
+## Featured Courses
 
-**Vishal Sen**
+<div class="grid cards" markdown>
 
-Infrastructure • Cloud • Automation Engineering
+-   :simple-docker:{ .lg .middle } **Docker — Zero to Production**
+
+    ---
+
+    Containers, Dockerfiles, multi-stage builds, Compose, registry security, and production hardening.
+
+    **Difficulty:** :material-circle:{ style="color: #2bbc8a" } Beginner–Intermediate
+
+    [:octicons-arrow-right-24: Start Course](courses/docker/index.md)
+
+-   :simple-kubernetes:{ .lg .middle } **Kubernetes — Zero to CKA**
+
+    ---
+
+    Architecture, workloads, RBAC, Helm, HPA, network policies, monitoring, and CKA exam prep.
+
+    **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate–Advanced
+
+    [:octicons-arrow-right-24: Start Course](courses/kubernetes/index.md)
+
+-   :simple-terraform:{ .lg .middle } **Terraform + Terragrunt**
+
+    ---
+
+    HCL, state management, modules, Terragrunt DRY patterns, Terratest, and multi-cloud deployment.
+
+    **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate
+
+    [:octicons-arrow-right-24: Start Course](courses/terraform/index.md)
+
+-   :simple-amazonaws:{ .lg .middle } **AWS — SAA-C03 Ready**
+
+    ---
+
+    Core services, VPC networking, IAM, cost optimisation, and Well-Architected Framework aligned with SAA-C03.
+
+    **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate
+
+    [:octicons-arrow-right-24: Start Course](courses/aws/index.md)
+
+-   :material-robot:{ .lg .middle } **MLOps Engineering**
+
+    ---
+
+    ML pipelines, MLflow, Kubeflow, feature stores, model serving, drift monitoring, and LLMOps patterns.
+
+    **Difficulty:** :material-circle:{ style="color: #e74c3c" } Advanced
+
+    [:octicons-arrow-right-24: Start Course](courses/mlops/index.md)
+
+-   :material-brain:{ .lg .middle } **AIOps — AI-Driven Ops**
+
+    ---
+
+    Anomaly detection, AI-assisted incident response, AI-powered CI/CD, and LLMs for infrastructure automation.
+
+    **Difficulty:** :material-circle:{ style="color: #e74c3c" } Advanced
+
+    [:octicons-arrow-right-24: Start Course](courses/aiops/index.md)
+
+</div>
+
+---
+
+## Quick Reference — Cheatsheets
+
+<div class="grid" markdown>
+
+[:material-file-code: Linux](cheatsheets/linux.md){ .md-button }
+[:material-git: Git](cheatsheets/git.md){ .md-button }
+[:simple-docker: Docker](cheatsheets/docker.md){ .md-button }
+[:simple-kubernetes: Kubernetes](cheatsheets/kubernetes.md){ .md-button }
+[:simple-terraform: Terraform](cheatsheets/terraform.md){ .md-button }
+[:simple-ansible: Ansible](cheatsheets/ansible.md){ .md-button }
+[:simple-helm: Helm](cheatsheets/helm.md){ .md-button }
+[:simple-amazonaws: AWS CLI](cheatsheets/aws-cli.md){ .md-button }
+
+</div>
+
+---
+
+## Latest from the Blog
+
+<!-- Blog posts auto-populate via the blog plugin -->
+<!-- Add recent entries manually or use the blog plugin's recent_posts snippet -->
+
+---
+
+## About This Hub
+
+This is a living knowledge base built from real production experience as a senior DevOps / MLOps lead consultant. Everything here has been used in actual systems — no padded theory.
+
+!!! info "How this content is maintained"
+    - Notes are written in [Obsidian](https://obsidian.md) and synced here via GitHub Actions.
+    - Each page shows a **last updated** timestamp from Git history.
+    - The source is open — [contribute on GitHub](https://github.com/yourusername/mkdocs-public).
+
+!!! tip "YouTube Channel"
+    Many of these notes have companion video walkthroughs. Subscribe on 
+    [:fontawesome-brands-youtube: YouTube](https://youtube.com/@yourchannel) for new content.
+
+---
+
+<div style="text-align: center; padding: 1rem 0; opacity: 0.6; font-size: 0.85rem;">
+Built with ❤️ using <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
+</div>

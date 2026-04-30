@@ -1,0 +1,12 @@
+site/
+.cache/
+__pycache__/
+*.pyc
+
+# Ignored content folders from multi-repo setup
+docs/courses/
+docs/cheatsheets/
+docs/interview-prep/
+docs/labs/
+docs/projects/
+docs/roadmap/

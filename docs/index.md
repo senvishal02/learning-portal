@@ -1,56 +1,54 @@
 ---
 title: Home
-description: DevOps & MLOps Learning Hub — notes, labs, interview prep, and real-world projects
+description: >-
+  Vishal Sen — Senior DevOps & MLOps Engineer. Production-grade learning platform
+  with structured courses, hands-on labs, real-world projects, and interview preparation.
 hide:
   - navigation
   - toc
+tags:
+  - home
+  - portfolio
+  - devops
+  - mlops
 ---
 
-# Welcome to the DevOps & MLOps Learning Hub
+<!-- Hero Section -->
+<div class="hero-section" markdown>
 
-<div class="grid cards" markdown>
+# :material-infinity: Vishal Sen
 
--   :material-rocket-launch:{ .lg .middle } **Start Learning**
+<p class="hero-subtitle">
+<strong>Senior DevOps & MLOps Engineer</strong> — Building production-grade infrastructure,
+intelligent pipelines, and scalable platforms. This is my engineering knowledge base,
+learning portal, and professional portfolio.
+</p>
 
-    ---
+<div class="hero-badges">
+  <span class="hero-badge">:material-cloud: Cloud Architecture</span>
+  <span class="hero-badge">:material-kubernetes: Container Orchestration</span>
+  <span class="hero-badge">:material-robot: MLOps & AIOps</span>
+  <span class="hero-badge">:material-terraform: Infrastructure as Code</span>
+  <span class="hero-badge">:material-pipe: CI/CD Pipelines</span>
+</div>
 
-    Structured courses from Linux fundamentals through Kubernetes, Terraform, and LLMOps. Built from 7+ years of production experience.
+<div class="hero-cta">
 
-    [:octicons-arrow-right-24: Browse Courses](courses/index.md)
+[:material-school: Explore Courses](courses/index.md){ .md-button .md-button--primary }
+[:material-flask-outline: Hands-on Labs](labs/index.md){ .md-button }
+[:fontawesome-brands-youtube: YouTube Channel](https://youtube.com/@senvishal02){ .md-button }
 
--   :material-flask-outline:{ .lg .middle } **Hands-on Labs**
-
-    ---
-
-    Step-by-step labs with real environments. No theory-only content — everything runs in your terminal.
-
-    [:octicons-arrow-right-24: Go to Labs](labs/index.md)
-
--   :material-briefcase-outline:{ .lg .middle } **Real Projects**
-
-    ---
-
-    Portfolio-ready projects with full source code. CI/CD pipelines, GitOps, MLOps platforms, AIOps tools.
-
-    [:octicons-arrow-right-24: View Projects](projects/index.md)
-
--   :material-head-lightbulb-outline:{ .lg .middle } **Interview Prep**
-
-    ---
-
-    Company-specific question banks for DevOps, SRE, MLOps, and Cloud architect roles at FAANG and beyond.
-
-    [:octicons-arrow-right-24: Start Prep](interview-prep/index.md)
+</div>
 
 </div>
 
 ---
 
-## Learning Roadmaps
+## :material-map-marker-path: Learning Roadmaps
 
-Choose your path and follow a structured progression from beginner to production-ready engineer.
+Choose your career path and follow a structured progression from fundamentals to production-ready expertise.
 
-=== "DevOps Engineer"
+=== ":material-cog: DevOps Engineer"
 
     ```
     Linux → Python → Git → Docker → Kubernetes → CI/CD
@@ -58,15 +56,15 @@ Choose your path and follow a structured progression from beginner to production
     ```
     [:octicons-arrow-right-24: DevOps Roadmap](roadmap/devops-roadmap.md)
 
-=== "MLOps Engineer"
+=== ":material-robot: MLOps Engineer"
 
     ```
-    Python → ML Basics → Data Engineering → ML Pipelines
+    Python → ML Fundamentals → Data Engineering → ML Pipelines
     → MLflow → Kubeflow → Model Serving → LLMOps
     ```
     [:octicons-arrow-right-24: MLOps Roadmap](roadmap/mlops-roadmap.md)
 
-=== "Platform Engineer"
+=== ":material-server: Platform Engineer"
 
     ```
     Kubernetes → Helm → GitOps → Service Mesh
@@ -74,7 +72,7 @@ Choose your path and follow a structured progression from beginner to production
     ```
     [:octicons-arrow-right-24: Platform Engineering Roadmap](roadmap/platform-engineering-roadmap.md)
 
-=== "Cloud Architect"
+=== ":material-cloud-outline: Cloud Architect"
 
     ```
     AWS/Azure/GCP Core → Networking → Security → IaC
@@ -84,37 +82,40 @@ Choose your path and follow a structured progression from beginner to production
 
 ---
 
-## Featured Courses
+## :material-school: Featured Courses
 
 <div class="grid cards" markdown>
 
--   :simple-docker:{ .lg .middle } **Docker — Zero to Production**
+-   :material-docker:{ .lg .middle } **Docker — Zero to Production**
 
     ---
 
     Containers, Dockerfiles, multi-stage builds, Compose, registry security, and production hardening.
 
     **Difficulty:** :material-circle:{ style="color: #2bbc8a" } Beginner–Intermediate
+    <span class="status-badge status-live">:material-check-circle: Live</span>
 
     [:octicons-arrow-right-24: Start Course](courses/docker/index.md)
 
--   :simple-kubernetes:{ .lg .middle } **Kubernetes — Zero to CKA**
+-   :material-kubernetes:{ .lg .middle } **Kubernetes — Zero to CKA**
 
     ---
 
     Architecture, workloads, RBAC, Helm, HPA, network policies, monitoring, and CKA exam prep.
 
     **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate–Advanced
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
 
     [:octicons-arrow-right-24: Start Course](courses/kubernetes/index.md)
 
--   :simple-terraform:{ .lg .middle } **Terraform + Terragrunt**
+-   :material-terraform:{ .lg .middle } **Terraform + Terragrunt**
 
     ---
 
     HCL, state management, modules, Terragrunt DRY patterns, Terratest, and multi-cloud deployment.
 
     **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate
+    <span class="status-badge status-live">:material-check-circle: Live</span>
 
     [:octicons-arrow-right-24: Start Course](courses/terraform/index.md)
 
@@ -125,6 +126,7 @@ Choose your path and follow a structured progression from beginner to production
     Core services, VPC networking, IAM, cost optimisation, and Well-Architected Framework aligned with SAA-C03.
 
     **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
 
     [:octicons-arrow-right-24: Start Course](courses/aws/index.md)
 
@@ -135,62 +137,254 @@ Choose your path and follow a structured progression from beginner to production
     ML pipelines, MLflow, Kubeflow, feature stores, model serving, drift monitoring, and LLMOps patterns.
 
     **Difficulty:** :material-circle:{ style="color: #e74c3c" } Advanced
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
 
     [:octicons-arrow-right-24: Start Course](courses/mlops/index.md)
 
--   :material-brain:{ .lg .middle } **AIOps — AI-Driven Ops**
+-   :material-brain:{ .lg .middle } **AIOps — AI-Driven Operations**
 
     ---
 
     Anomaly detection, AI-assisted incident response, AI-powered CI/CD, and LLMs for infrastructure automation.
 
     **Difficulty:** :material-circle:{ style="color: #e74c3c" } Advanced
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
 
     [:octicons-arrow-right-24: Start Course](courses/aiops/index.md)
 
 </div>
 
+[:octicons-arrow-right-24: Browse All 14 Courses](courses/index.md){ .md-button }
+
 ---
 
-## Quick Reference — Cheatsheets
+## :material-head-lightbulb-outline: Interview Preparation Hub
 
-<div class="grid" markdown>
+<div class="grid cards" markdown>
 
-[:material-file-code: Linux](cheatsheets/linux.md){ .md-button }
-[:material-git: Git](cheatsheets/git.md){ .md-button }
-[:simple-docker: Docker](cheatsheets/docker.md){ .md-button }
-[:simple-kubernetes: Kubernetes](cheatsheets/kubernetes.md){ .md-button }
-[:simple-terraform: Terraform](cheatsheets/terraform.md){ .md-button }
-[:simple-ansible: Ansible](cheatsheets/ansible.md){ .md-button }
-[:simple-helm: Helm](cheatsheets/helm.md){ .md-button }
-[:simple-amazonaws: AWS CLI](cheatsheets/aws-cli.md){ .md-button }
+-   :material-briefcase:{ .lg .middle } **DevOps Interviews**
+
+    ---
+
+    CI/CD, containers, Kubernetes, scripting, system design, behavioral questions. FAANG and startup-specific Q&A.
+
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+
+    [:octicons-arrow-right-24: DevOps Prep](interview-prep/devops/index.md)
+
+-   :material-shield-check:{ .lg .middle } **SRE Interviews**
+
+    ---
+
+    SLOs, SLIs, incident management, toil reduction, capacity planning, and system design for reliability.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: SRE Prep](interview-prep/sre/index.md)
+
+-   :material-robot-outline:{ .lg .middle } **MLOps Interviews**
+
+    ---
+
+    ML system design, pipeline architecture, model serving at scale, coding rounds, and company-wise preparation.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: MLOps Prep](interview-prep/mlops/index.md)
+
+-   :material-cloud-outline:{ .lg .middle } **Cloud Interviews**
+
+    ---
+
+    AWS, Azure, GCP deep-dive questions. Multi-cloud architecture, cost optimisation, and security patterns.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: Cloud Prep](interview-prep/cloud/index.md)
 
 </div>
 
 ---
 
-## Latest from the Blog
+## :material-flask-outline: Hands-on Labs
 
-<!-- Blog posts auto-populate via the blog plugin -->
-<!-- Add recent entries manually or use the blog plugin's recent_posts snippet -->
+<div class="grid cards" markdown>
+
+-   :material-kubernetes:{ .lg .middle } **Kubernetes Labs** · 8 Labs
+
+    ---
+
+    Deploy stateless apps, PersistentVolumes, Ingress + TLS, RBAC, HPA/VPA, Network Policies, Helm, Canary deployments.
+
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+
+    [:octicons-arrow-right-24: Start Labs](labs/kubernetes-labs/index.md)
+
+-   :material-docker:{ .lg .middle } **Docker Labs** · 4 Labs
+
+    ---
+
+    Multi-stage builds, Docker networking, Compose stacks, and image security scanning.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: Start Labs](labs/docker-labs/index.md)
+
+-   :material-terraform:{ .lg .middle } **Terraform Labs** · 5 Labs
+
+    ---
+
+    AWS VPC provisioning, modules, remote state, Terragrunt patterns, and drift detection.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: Start Labs](labs/terraform-labs/index.md)
+
+-   :material-robot:{ .lg .middle } **MLOps Labs** · 5 Labs
+
+    ---
+
+    MLflow tracking, Kubeflow pipelines, BentoML serving, Feast feature store, and LLM API deployment.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: Start Labs](labs/mlops-labs/index.md)
+
+</div>
 
 ---
 
-## About This Hub
+## :material-folder-star: Real-World Projects
 
-This is a living knowledge base built from real production experience as a senior DevOps / MLOps lead consultant. Everything here has been used in actual systems — no padded theory.
+<div class="grid cards" markdown>
 
-!!! info "How this content is maintained"
-    - Notes are written in [Obsidian](https://obsidian.md) and synced here via GitHub Actions.
-    - Each page shows a **last updated** timestamp from Git history.
-    - The source is open — [contribute on GitHub](https://github.com/yourusername/mkdocs-public).
+-   :material-pipe:{ .lg .middle } **DevOps Projects** · 5 Projects
 
-!!! tip "YouTube Channel"
-    Many of these notes have companion video walkthroughs. Subscribe on 
-    [:fontawesome-brands-youtube: YouTube](https://youtube.com/@yourchannel) for new content.
+    ---
+
+    End-to-end CI/CD, GitOps with ArgoCD, EKS clusters, observability stacks, and self-hosted runners.
+
+    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+
+    [:octicons-arrow-right-24: View Projects](projects/devops-projects/index.md)
+
+-   :material-robot:{ .lg .middle } **MLOps Projects** · 4 Projects
+
+    ---
+
+    ML pipeline on K8s, LLMOps platform with RAG, real-time inference API, and AI-powered log analysis.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: View Projects](projects/mlops-projects/index.md)
+
+-   :material-cog:{ .lg .middle } **Automation Projects** · 3 Projects
+
+    ---
+
+    AWS cost optimisation bot, auto-remediation framework, and infrastructure drift reporter.
+
+    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+
+    [:octicons-arrow-right-24: View Projects](projects/automation-projects/index.md)
+
+</div>
+
+---
+
+## :material-lightning-bolt: Quick Reference — Cheatsheets
+
+<div class="grid" markdown>
+
+[:material-console-line: Linux](cheatsheets/linux.md){ .md-button }
+[:material-git: Git](cheatsheets/git.md){ .md-button }
+[:material-docker: Docker](cheatsheets/docker.md){ .md-button }
+[:material-kubernetes: Kubernetes](cheatsheets/kubernetes.md){ .md-button }
+[:material-terraform: Terraform](cheatsheets/terraform.md){ .md-button }
+[:simple-ansible: Ansible](cheatsheets/ansible.md){ .md-button }
+[:simple-helm: Helm](cheatsheets/helm.md){ .md-button }
+[:simple-amazonaws: AWS CLI](cheatsheets/aws-cli.md){ .md-button }
+[:material-language-python: Python](cheatsheets/python-devops.md){ .md-button }
+[:material-bash: Bash](cheatsheets/bash.md){ .md-button }
+
+</div>
+
+---
+
+## :fontawesome-brands-youtube: YouTube Learning Channel
+
+> **Learn DevOps & MLOps through practical, production-focused video content.**
+
+Each course module has companion video walkthroughs — from beginner fundamentals to advanced architecture deep dives. Subscribe and follow along with the structured learning paths.
+
+[:fontawesome-brands-youtube: Subscribe on YouTube](https://youtube.com/@senvishal02){ .md-button .md-button--primary }
+
+---
+
+## :material-chart-box: Skills & Expertise
+
+<div class="grid cards" markdown>
+
+-   :material-server:{ .lg .middle } **Infrastructure & Platforms**
+
+    ---
+
+    Linux · Docker · Kubernetes · Helm · Istio · EKS · AKS
+
+-   :material-pipe:{ .lg .middle } **CI/CD & Automation**
+
+    ---
+
+    Jenkins · GitHub Actions · ArgoCD · Ansible · Terraform · Terragrunt
+
+-   :material-cloud:{ .lg .middle } **Cloud Platforms**
+
+    ---
+
+    AWS · Azure · GCP · Multi-cloud Architecture · FinOps
+
+-   :material-robot:{ .lg .middle } **ML/AI Engineering**
+
+    ---
+
+    MLflow · Kubeflow · Feature Stores · Model Serving · LLMOps · AIOps
+
+-   :material-shield-lock:{ .lg .middle } **Security & Reliability**
+
+    ---
+
+    DevSecOps · RBAC · Network Policies · SRE Practices · Incident Response
+
+-   :material-chart-line:{ .lg .middle } **Observability**
+
+    ---
+
+    Prometheus · Grafana · Loki · ELK Stack · Distributed Tracing
+
+</div>
+
+---
+
+## :material-information: About This Platform
+
+This is a **living knowledge base** built from real production experience as a senior DevOps and MLOps engineer. Every page reflects patterns used in actual enterprise environments — no padded theory.
+
+!!! info "How this platform is maintained"
+    - Notes are written and synced via GitHub
+    - Each page shows a **last updated** timestamp from Git history
+    - Content is continuously improved and expanded
+    - The source is open — [contribute on GitHub](https://github.com/senvishal02/learning-portal)
+
+!!! tip "Professional Engagement"
+    If you're a recruiter, hiring manager, or consulting client — this platform demonstrates
+    my depth of knowledge, structured thinking, and commitment to engineering excellence.
+    Feel free to explore any section for evidence of hands-on expertise.
 
 ---
 
 <div style="text-align: center; padding: 1rem 0; opacity: 0.6; font-size: 0.85rem;">
-Built with ❤️ using <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
+Built with :heart: using <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a> ·
+<a href="https://github.com/senvishal02">GitHub</a> ·
+<a href="https://linkedin.com/in/senvishal02">LinkedIn</a> ·
+<a href="https://youtube.com/@senvishal02">YouTube</a>
 </div>

@@ -1,57 +1,82 @@
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║  Vishal Sen — DevOps & MLOps Learning Portal                               ║
+# ║  Production-Grade MkDocs Configuration                                      ║
+# ║  https://learning.vishal-connect.com                                        ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+
 # ── Site Identity ─────────────────────────────────────────────────────────────
-site_name: Vishal Sen | DevOps & MLOps
+site_name: Vishal Sen | DevOps & MLOps Engineering
 site_author: Vishal Sen
 site_url: https://learning.vishal-connect.com
 site_description: >-
-  Production-grade learning platform for DevOps, 
-  MLOps, AIOps — courses, labs, projects, interview prep.
+  Production-grade learning platform for DevOps, MLOps, AIOps —
+  structured courses, hands-on labs, real-world projects,
+  interview preparation, and professional portfolio.
 
 # ── Repository ────────────────────────────────────────────────────────────────
-# repo_name: yourusername/mkdocs-public
-# repo_url: https://github.com/yourusername/mkdocs-public
-# edit_uri: edit/main/docs/
+repo_name: senvishal02/learning-portal
+repo_url: https://github.com/senvishal02/learning-portal
+edit_uri: edit/main/docs/
 
-# ── Theme ────────────────────────────────────────────────────────────────
+# ── Theme ─────────────────────────────────────────────────────────────────────
 theme:
   name: material
-  # custom_dir: docs/.overrides
+  custom_dir: overrides
 
+  # Favicon & Logo
+  # logo: assets/images/logo.png
+  # favicon: assets/images/favicon.png
 
-  # # Favicon & Logo
-  # logo: assets/logo.png
-  # favicon: assets/favicon.png
-
-  # Color palette
+  # Color palette — Professional dark/light toggle
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/link
         name: Switch to light mode
+
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: indigo
+      primary: indigo
+      accent: cyan
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to dark mode
+
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: deep purple
+      accent: cyan
       toggle:
-        icon: material/toggle-switch-off
+        icon: material/weather-night
         name: Switch to system preference
 
-  # Font
+  # Typography
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Inter
+    code: JetBrains Mono
 
-  # Icon
+  # Icons
   icon:
     repo: fontawesome/brands/github
     annotation: material/arrow-right-circle
     logo: material/infinity
+    edit: material/pencil
+    view: material/eye
+
+    # Admonition icons
+    admonition:
+      note: material/pencil-circle
+      abstract: material/clipboard-text
+      info: material/information
+      tip: material/fire
+      success: material/check-circle
+      question: material/help-circle
+      warning: material/alert
+      failure: material/close-circle
+      danger: material/lightning-bolt-circle
+      bug: material/bug
+      example: material/test-tube
+      quote: material/format-quote-close
 
   # Feature flags
   features:
@@ -65,7 +90,6 @@ theme:
     - navigation.top
     - navigation.footer
     - navigation.tracking
-    - navigation.expand
     - navigation.indexes
     - navigation.path
 
@@ -83,14 +107,20 @@ theme:
     - search.highlight
     - search.share
 
-    # TOC
+    # Table of Contents
     - toc.follow
+
+    # Header
+    - header.autohide
+    - announce.dismiss
 
 # ── Plugins ───────────────────────────────────────────────────────────────────
 plugins:
+  # Search
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  # Blog support
+
+  # Blog
   - blog:
       blog_dir: blog
       blog_toc: true
@@ -107,27 +137,26 @@ plugins:
       draft: true
       draft_if_future_date: true
 
-  # Tags across all pages
-  - tags:
-      tags_file: tags.md
+  # Tags
+  - tags
 
-  # # Auto-generate social share cards
-  # - social:
-  #     cards_layout_options:
-  #       background_color: "#1a1a2e"
-  #       color: "#ffffff"
-  #       font_family: Inter
+  # Git revision dates
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      fallback_to_build_date: true
 
-   # Minify HTML output for production       
+  # Minify output
   - minify:
       minify_html: true
       minify_js: true
       minify_css: true
       htmlmin_opts:
         remove_comments: true
-        
+
 # ── Markdown Extensions ───────────────────────────────────────────────────────
 markdown_extensions:
+  # Standard
   - abbr
   - admonition
   - attr_list
@@ -135,9 +164,14 @@ markdown_extensions:
   - footnotes
   - md_in_html
   - tables
+
+  # Table of Contents
   - toc:
       permalink: true
       title: On this page
+      toc_depth: 3
+
+  # PyMdown Extensions
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -152,6 +186,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      use_pygments: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:
@@ -165,14 +200,11 @@ markdown_extensions:
       base_path: docs
       auto_append:
         - includes/abbreviations.md
-        # - includes/mkdocs.md
-        # - includes/glossary.md
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
   - pymdownx.tabbed:
       alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
@@ -181,22 +213,32 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.critic
 
 # ── Extra JavaScript & CSS ────────────────────────────────────────────────────
 extra_javascript:
-  # MathJax for LaTeX math rendering
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - assets/javascripts/mathjax.js
+  # MathJax
+  - assets/js/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  # Custom scripts
-  - assets/javascripts/extra.js
+  # Custom
+  - assets/js/extra.js
 
 extra_css:
-  - assets/stylesheets/extra.css  
+  - assets/css/extra.css
 
 # ── Extra Config ──────────────────────────────────────────────────────────────
 extra:
+  # Hide generator notice
   generator: false
+
+  # Announcement bar
+  announce:
+    text: >-
+      🚀 <strong>Welcome to the DevOps & MLOps Engineering Hub</strong> —
+      Courses, Labs, Projects & Interview Prep.
+      <a href="https://youtube.com/@senvishal02">Subscribe on YouTube</a>
+
+  # Google Analytics
   analytics:
     provider: google
     property: !ENV [GOOGLE_ANALYTICS_KEY, '']
@@ -213,7 +255,7 @@ extra:
           data: 0
           note: >-
             Thanks for letting me know! You can
-            <a href="https://github.com/yourusername/mkdocs-public/issues/new?title=[Feedback]"
+            <a href="https://github.com/senvishal02/learning-portal/issues/new?title=[Feedback]"
                target="_blank" rel="noopener">open an issue</a> with suggestions.
 
   # Cookie consent (GDPR)
@@ -240,21 +282,22 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/senvishal02
       name: LinkedIn
-      
+
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/senvishal02
       name: Docker Hub
-  # Status badges for pages
+
+  # Page status indicators
   status:
-    new: Recently added
+    new: Recently Added
     deprecated: Deprecated
 
-# Copyright
+# ── Copyright ─────────────────────────────────────────────────────────────────
 copyright: >
-  Copyright &copy; 2026 Vishal Sen &mdash;
+  Copyright &copy; 2024–2026 Vishal Sen &mdash;
   <a href="#__consent">Manage cookies</a>
 
-
+# ── Not in Nav (external repo content) ────────────────────────────────────────
 not_in_nav: |
   ./courses/**/*.md
 
@@ -444,6 +487,7 @@ nav:
           - Lab 06 — Network Policies: labs/kubernetes-labs/lab-06-network-policies.md
           - Lab 07 — Helm Chart Authoring: labs/kubernetes-labs/lab-07-helm.md
           - Lab 08 — Canary Deployments: labs/kubernetes-labs/lab-08-canary.md
+
       - Docker Labs:
           - labs/docker-labs/index.md
           - Lab 01 — Multi-stage Builds: labs/docker-labs/lab-01-multistage.md

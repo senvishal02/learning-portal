@@ -2,36 +2,78 @@ name: Deploy MkDocs
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
+  repository_dispatch:
+    types: [content-update]
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-jobs:
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
+jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Clone courses repo
         run: |
-          git clone https://github.com/senvishal02/courses.git docs/courses
+          rm -rf docs/courses
+          git clone --depth 1 https://github.com/senvishal02/courses.git docs/courses
+        continue-on-error: true
+
+      - name: Clone interview-prep repo
+        run: |
+          rm -rf docs/interview-prep
+          git clone --depth 1 https://github.com/senvishal02/interview-prep.git docs/interview-prep
+        continue-on-error: true
+
+      - name: Clone labs repo
+        run: |
+          rm -rf docs/labs
+          git clone --depth 1 https://github.com/senvishal02/labs.git docs/labs
+        continue-on-error: true
+
+      - name: Clone projects repo
+        run: |
+          rm -rf docs/projects
+          git clone --depth 1 https://github.com/senvishal02/projects.git docs/projects
+        continue-on-error: true
+
+      - name: Clone cheatsheets repo
+        run: |
+          rm -rf docs/cheatsheets
+          git clone --depth 1 https://github.com/senvishal02/cheatsheets.git docs/cheatsheets
+        continue-on-error: true
+
+      - name: Clone roadmap repo
+        run: |
+          rm -rf docs/roadmap
+          git clone --depth 1 https://github.com/senvishal02/roadmap.git docs/roadmap
+        continue-on-error: true
 
       - name: Build site
         run: mkdocs build
@@ -44,11 +86,13 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       pages: write
       id-token: write
-
     steps:
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4

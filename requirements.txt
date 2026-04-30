@@ -1,9 +1,13 @@
-mkdocs-material==9.5.18
-mkdocs-awesome-pages-plugin
-mkdocs-minify-plugin
-mkdocs-mermaid2-plugin
-mkdocs-git-revision-date-localized-plugin
-pymdown-extensions
-pyyaml-include
-mkdocs-include-markdown-plugin
-mkdocs-monorepo-plugin
+# ── MkDocs Core ──────────────────────────────────────────
+mkdocs>=1.6.0
+mkdocs-material>=9.5.18
+
+# ── Plugins ──────────────────────────────────────────────
+mkdocs-minify-plugin>=0.8.0
+mkdocs-git-revision-date-localized-plugin>=1.2.6
+
+# ── Markdown Extensions ─────────────────────────────────
+pymdown-extensions>=10.8
+
+# ── Utilities ────────────────────────────────────────────
+pyyaml>=6.0

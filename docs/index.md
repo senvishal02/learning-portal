@@ -14,7 +14,7 @@ tags:
 ---
 
 <!-- Hero Section -->
-<div class="hero-section" markdown>
+<div class="hero-section" markdown="1">
 
 # :material-infinity: Vishal Sen
 
@@ -24,15 +24,17 @@ intelligent pipelines, and scalable platforms. This is my engineering knowledge 
 learning portal, and professional portfolio.
 </p>
 
-<div class="hero-badges">
-  <span class="hero-badge">:material-cloud: Cloud Architecture</span>
-  <span class="hero-badge">:material-kubernetes: Container Orchestration</span>
-  <span class="hero-badge">:material-robot: MLOps & AIOps</span>
-  <span class="hero-badge">:material-terraform: Infrastructure as Code</span>
-  <span class="hero-badge">:material-pipe: CI/CD Pipelines</span>
+<div class="hero-badges" markdown="1">
+
+<span class="hero-badge" markdown="1">:material-cloud: Cloud Architecture</span>
+<span class="hero-badge" markdown="1">:material-kubernetes: Container Orchestration</span>
+<span class="hero-badge" markdown="1">:material-robot: MLOps & AIOps</span>
+<span class="hero-badge" markdown="1">:material-terraform: Infrastructure as Code</span>
+<span class="hero-badge" markdown="1">:material-pipe: CI/CD Pipelines</span>
+
 </div>
 
-<div class="hero-cta">
+<div class="hero-cta" markdown="1">
 
 [:material-school: Explore Courses](courses/index.md){ .md-button .md-button--primary }
 [:material-flask-outline: Hands-on Labs](labs/index.md){ .md-button }
@@ -84,7 +86,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
 ## :material-school: Featured Courses
 
-<div class="grid cards" markdown>
+<div class="grid cards" markdown="1">
 
 -   :material-docker:{ .lg .middle } **Docker — Zero to Production**
 
@@ -93,7 +95,7 @@ Choose your career path and follow a structured progression from fundamentals to
     Containers, Dockerfiles, multi-stage builds, Compose, registry security, and production hardening.
 
     **Difficulty:** :material-circle:{ style="color: #2bbc8a" } Beginner–Intermediate
-    <span class="status-badge status-live">:material-check-circle: Live</span>
+    [:material-check-circle: Live]{ .status-badge status-live }
 
     [:octicons-arrow-right-24: Start Course](courses/docker/index.md)
 
@@ -104,7 +106,7 @@ Choose your career path and follow a structured progression from fundamentals to
     Architecture, workloads, RBAC, Helm, HPA, network policies, monitoring, and CKA exam prep.
 
     **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate–Advanced
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: Start Course](courses/kubernetes/index.md)
 
@@ -115,7 +117,7 @@ Choose your career path and follow a structured progression from fundamentals to
     HCL, state management, modules, Terragrunt DRY patterns, Terratest, and multi-cloud deployment.
 
     **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate
-    <span class="status-badge status-live">:material-check-circle: Live</span>
+    [:material-check-circle: Live]{ .status-badge status-live }
 
     [:octicons-arrow-right-24: Start Course](courses/terraform/index.md)
 
@@ -126,7 +128,7 @@ Choose your career path and follow a structured progression from fundamentals to
     Core services, VPC networking, IAM, cost optimisation, and Well-Architected Framework aligned with SAA-C03.
 
     **Difficulty:** :material-circle:{ style="color: #e5a50a" } Intermediate
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: Start Course](courses/aws/index.md)
 
@@ -137,7 +139,7 @@ Choose your career path and follow a structured progression from fundamentals to
     ML pipelines, MLflow, Kubeflow, feature stores, model serving, drift monitoring, and LLMOps patterns.
 
     **Difficulty:** :material-circle:{ style="color: #e74c3c" } Advanced
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: Start Course](courses/mlops/index.md)
 
@@ -148,7 +150,7 @@ Choose your career path and follow a structured progression from fundamentals to
     Anomaly detection, AI-assisted incident response, AI-powered CI/CD, and LLMs for infrastructure automation.
 
     **Difficulty:** :material-circle:{ style="color: #e74c3c" } Advanced
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: Start Course](courses/aiops/index.md)
 
@@ -160,7 +162,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
 ## :material-head-lightbulb-outline: Interview Preparation Hub
 
-<div class="grid cards" markdown>
+<div class="grid cards" markdown="1">
 
 -   :material-briefcase:{ .lg .middle } **DevOps Interviews**
 
@@ -168,7 +170,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     CI/CD, containers, Kubernetes, scripting, system design, behavioral questions. FAANG and startup-specific Q&A.
 
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: DevOps Prep](interview-prep/devops/index.md)
 
@@ -178,7 +180,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     SLOs, SLIs, incident management, toil reduction, capacity planning, and system design for reliability.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: SRE Prep](interview-prep/sre/index.md)
 
@@ -188,7 +190,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     ML system design, pipeline architecture, model serving at scale, coding rounds, and company-wise preparation.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: MLOps Prep](interview-prep/mlops/index.md)
 
@@ -198,7 +200,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     AWS, Azure, GCP deep-dive questions. Multi-cloud architecture, cost optimisation, and security patterns.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: Cloud Prep](interview-prep/cloud/index.md)
 
@@ -208,7 +210,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
 ## :material-flask-outline: Hands-on Labs
 
-<div class="grid cards" markdown>
+<div class="grid cards" markdown="1">
 
 -   :material-kubernetes:{ .lg .middle } **Kubernetes Labs** · 8 Labs
 
@@ -216,7 +218,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     Deploy stateless apps, PersistentVolumes, Ingress + TLS, RBAC, HPA/VPA, Network Policies, Helm, Canary deployments.
 
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: Start Labs](labs/kubernetes-labs/index.md)
 
@@ -226,7 +228,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     Multi-stage builds, Docker networking, Compose stacks, and image security scanning.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: Start Labs](labs/docker-labs/index.md)
 
@@ -236,7 +238,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     AWS VPC provisioning, modules, remote state, Terragrunt patterns, and drift detection.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: Start Labs](labs/terraform-labs/index.md)
 
@@ -246,7 +248,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     MLflow tracking, Kubeflow pipelines, BentoML serving, Feast feature store, and LLM API deployment.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: Start Labs](labs/mlops-labs/index.md)
 
@@ -256,7 +258,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
 ## :material-folder-star: Real-World Projects
 
-<div class="grid cards" markdown>
+<div class="grid cards" markdown="1">
 
 -   :material-pipe:{ .lg .middle } **DevOps Projects** · 5 Projects
 
@@ -264,7 +266,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     End-to-end CI/CD, GitOps with ArgoCD, EKS clusters, observability stacks, and self-hosted runners.
 
-    <span class="status-badge status-progress">:material-clock-outline: In Progress</span>
+    [:material-clock-outline: In Progress]{ .status-badge status-progress }
 
     [:octicons-arrow-right-24: View Projects](projects/devops-projects/index.md)
 
@@ -274,7 +276,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     ML pipeline on K8s, LLMOps platform with RAG, real-time inference API, and AI-powered log analysis.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: View Projects](projects/mlops-projects/index.md)
 
@@ -284,7 +286,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
     AWS cost optimisation bot, auto-remediation framework, and infrastructure drift reporter.
 
-    <span class="status-badge status-planned">:material-pencil-outline: Planned</span>
+    [:material-pencil-outline: Planned]{ .status-badge status-planned }
 
     [:octicons-arrow-right-24: View Projects](projects/automation-projects/index.md)
 
@@ -294,7 +296,7 @@ Choose your career path and follow a structured progression from fundamentals to
 
 ## :material-lightning-bolt: Quick Reference — Cheatsheets
 
-<div class="grid" markdown>
+<div class="grid" markdown="1">
 
 [:material-console-line: Linux](cheatsheets/linux.md){ .md-button }
 [:material-git: Git](cheatsheets/git.md){ .md-button }
@@ -323,7 +325,7 @@ Each course module has companion video walkthroughs — from beginner fundamenta
 
 ## :material-chart-box: Skills & Expertise
 
-<div class="grid cards" markdown>
+<div class="grid cards" markdown="1">
 
 -   :material-server:{ .lg .middle } **Infrastructure & Platforms**
 

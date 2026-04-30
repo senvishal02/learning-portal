@@ -13,7 +13,7 @@
 
 ## Tools and Technology
 
-<div class="grid cards cols-3" markdown>
+<div class="grid cards cols-3" markdown markdown="1">
 
 - [:material-linux: **Linux**](courses/linux/index.md){ .course-link .course-title }<br>
   :material-clock-outline: **Status:** <span class="course-status">Coming Soon</span>
@@ -28,7 +28,7 @@
 
 ---
 
-<div class="icon-toolbar" markdown>
+<div class="icon-toolbar" markdown markdown="1">
 
 [:material-folder-eye:](https://github.com "View example"){ .course-link } 
 [:material-folder-download:](files/course.zip "Download example file"){ .course-link }
@@ -100,7 +100,7 @@ curl https://example.com
 
 ---
 
-<div class="tooltip" markdown>
+<div class="tooltip" markdown markdown="1">
 
 [:material-linux: **Linux Course**](courses/linux/index.md)
 
@@ -126,7 +126,7 @@ curl https://example.com
 ---
 
 ### Example Script
-<div class="icon-toolbar" markdown>
+<div class="icon-toolbar" markdown markdown="1">
 
 [:material-folder-eye:](https://github.com "View example"){ .course-link } 
 [:material-folder-download:](files/course.zip "Download example file"){ .course-link }

@@ -10,7 +10,7 @@ Build strong foundations in **systems, automation, cloud platforms, and operatio
 
 ## Tools and Technology
 
-<div class="grid cards cols-3" markdown>
+<div class="grid cards cols-3" markdown markdown="1">
 
 - [:material-linux: **Linux**](courses/linux/index.md){ .course-link }  
   :material-clock-outline: **Status:** <span style="color:#6c757d;">Coming Soon</span>

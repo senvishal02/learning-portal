@@ -142,15 +142,16 @@ plugins:
 
   # Git revision dates
   - git-revision-date-localized:
+      enabled: !ENV [ENABLE_GIT_DATES, true]
       enable_creation_date: true
       type: timeago
       fallback_to_build_date: true
 
-  # Minify output
+  # Minify output (Disabled by default in testing for speed)
   - minify:
-      minify_html: true
-      minify_js: true
-      minify_css: true
+      minify_html: !ENV [ENABLE_MINIFY, false]
+      minify_js: !ENV [ENABLE_MINIFY, false]
+      minify_css: !ENV [ENABLE_MINIFY, false]
       htmlmin_opts:
         remove_comments: true
 

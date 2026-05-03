@@ -309,134 +309,24 @@ nav:
   - Tags: tags.md
 
   # ── COURSES ──────────────────────────────────────────────────────────────
+  # Hub-and-Spoke: only course names in sidebar.
+  # Topics are linked from each course's index.md landing page.
   - Courses:
       - courses/index.md
-
-      - Linux:
-          - courses/linux/index.md
-          - Introduction: courses/linux/01-introduction.md
-          - File System & Navigation: courses/linux/02-filesystem.md
-          - Users & Permissions: courses/linux/03-permissions.md
-          - Processes & Jobs: courses/linux/04-processes.md
-          - Networking Basics: courses/linux/05-networking.md
-          - Shell Scripting: courses/linux/06-shell-scripting.md
-          - System Administration: courses/linux/07-sysadmin.md
-          - Performance Tuning: courses/linux/08-performance.md
-
-      - Python for DevOps:
-          - courses/python/index.md
-          - Python Basics: courses/python/01-basics.md
-          - Automation Scripts: courses/python/02-automation.md
-          - Working with APIs: courses/python/03-apis.md
-          - Boto3 & AWS SDK: courses/python/04-boto3.md
-          - Testing & CI: courses/python/05-testing.md
-
-      - Git & GitHub:
-          - courses/git-github/index.md
-          - Git Fundamentals: courses/git-github/01-fundamentals.md
-          - Branching Strategies: courses/git-github/02-branching.md
-          - GitHub Actions: courses/git-github/03-github-actions.md
-          - GitOps Patterns: courses/git-github/04-gitops.md
-
-      - Ansible:
-          - courses/ansible/index.md
-          - Inventory & Ad-hoc: courses/ansible/01-inventory.md
-          - Playbooks: courses/ansible/02-playbooks.md
-          - Roles & Galaxy: courses/ansible/03-roles.md
-          - Vault & Secrets: courses/ansible/04-vault.md
-          - Real-world Patterns: courses/ansible/05-patterns.md
-
-      - Docker:
-          - courses/docker/index.md
-          - Containers 101: courses/docker/01-containers.md
-          - Dockerfile Deep Dive: courses/docker/02-dockerfile.md
-          - Networking & Volumes: courses/docker/03-networking.md
-          - Docker Compose: courses/docker/04-compose.md
-          - Registry & Security: courses/docker/05-registry.md
-          - Production Best Practices: courses/docker/06-production.md
-
-      - Kubernetes:
-          - courses/kubernetes/index.md
-          - Architecture: courses/kubernetes/01-architecture.md
-          - Pods & Workloads: courses/kubernetes/02-workloads.md
-          - Services & Networking: courses/kubernetes/03-networking.md
-          - Storage: courses/kubernetes/04-storage.md
-          - RBAC & Security: courses/kubernetes/05-rbac.md
-          - Helm: courses/kubernetes/06-helm.md
-          - Monitoring & Logging: courses/kubernetes/07-monitoring.md
-          - Production Patterns: courses/kubernetes/08-production.md
-          - CKA Exam Prep: courses/kubernetes/09-cka-prep.md
-
-      - Jenkins:
-          - courses/jenkins/index.md
-          - Setup & Architecture: courses/jenkins/01-setup.md
-          - Pipelines as Code: courses/jenkins/02-pipelines.md
-          - Shared Libraries: courses/jenkins/03-shared-libraries.md
-          - Jenkins + Docker/K8s: courses/jenkins/04-containers.md
-          - Security & Best Practices: courses/jenkins/05-security.md
-
-      - Terraform:
-          - courses/terraform/index.md
-          - HCL Fundamentals: courses/terraform/01-hcl.md
-          - State Management: courses/terraform/02-state.md
-          - Modules: courses/terraform/03-modules.md
-          - Terragrunt: courses/terraform/04-terragrunt.md
-          - CI/CD with Terraform: courses/terraform/05-cicd.md
-          - Testing with Terratest: courses/terraform/06-testing.md
-          - Multi-cloud Patterns: courses/terraform/07-multicloud.md
-
-      - AWS:
-          - courses/aws/index.md
-          - Core Services: courses/aws/01-core.md
-          - Compute (EC2, ECS, Lambda): courses/aws/02-compute.md
-          - Networking (VPC, Route53): courses/aws/03-networking.md
-          - Storage & Databases: courses/aws/04-storage.md
-          - IAM & Security: courses/aws/05-iam.md
-          - Cost Optimization: courses/aws/06-cost.md
-          - Well-Architected Framework: courses/aws/07-well-architected.md
-          - SAA-C03 Exam Prep: courses/aws/08-saa-prep.md
-
-      - Azure:
-          - courses/azure/index.md
-          - Core Services: courses/azure/01-core.md
-          - AKS (Azure Kubernetes): courses/azure/02-aks.md
-          - Azure DevOps: courses/azure/03-azure-devops.md
-          - Security & Compliance: courses/azure/04-security.md
-
-      - Machine Learning:
-          - courses/ml/index.md
-          - ML Fundamentals: courses/ml/01-fundamentals.md
-          - Scikit-learn: courses/ml/02-sklearn.md
-          - Deep Learning Basics: courses/ml/03-deep-learning.md
-          - Model Evaluation: courses/ml/04-evaluation.md
-
-      - Data Science:
-          - courses/data-science/index.md
-          - Data Engineering Basics: courses/data-science/01-data-engineering.md
-          - Pandas & NumPy: courses/data-science/02-pandas.md
-          - EDA & Visualization: courses/data-science/03-eda.md
-          - Feature Engineering: courses/data-science/04-features.md
-
-      - MLOps:
-          - courses/mlops/index.md
-          - MLOps Principles: courses/mlops/01-principles.md
-          - ML Pipelines: courses/mlops/02-pipelines.md
-          - Model Registry & Versioning: courses/mlops/03-registry.md
-          - Model Serving & APIs: courses/mlops/04-serving.md
-          - Feature Stores: courses/mlops/05-feature-stores.md
-          - ML Monitoring & Drift: courses/mlops/06-monitoring.md
-          - Kubeflow: courses/mlops/07-kubeflow.md
-          - MLflow: courses/mlops/08-mlflow.md
-          - LLMOps: courses/mlops/09-llmops.md
-
-      - AIOps:
-          - courses/aiops/index.md
-          - AIOps Overview: courses/aiops/01-overview.md
-          - AI-Driven Monitoring: courses/aiops/02-monitoring.md
-          - Anomaly Detection: courses/aiops/03-anomaly.md
-          - AI-Assisted Incident Response: courses/aiops/04-incident.md
-          - AI in CI/CD: courses/aiops/05-cicd.md
-          - LLMs for DevOps: courses/aiops/06-llms.md
+      - Linux:            courses/linux/index.md
+      - Python for DevOps: courses/python/index.md
+      - Git & GitHub:     courses/git-github/index.md
+      - Ansible:          courses/ansible/index.md
+      - Docker:           courses/docker/index.md
+      - Kubernetes:       courses/kubernetes/index.md
+      - Jenkins:          courses/jenkins/index.md
+      - Terraform:        courses/terraform/index.md
+      - AWS:              courses/aws/index.md
+      - Azure:            courses/azure/index.md
+      - Machine Learning: courses/ml/index.md
+      - Data Science:     courses/data-science/index.md
+      - MLOps:            courses/mlops/index.md
+      - AIOps:            courses/aiops/index.md
 
   # ── INTERVIEW PREP ───────────────────────────────────────────────────────
   - Interview Prep:

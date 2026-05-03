@@ -711,3 +711,92 @@
     border: 1px solid #ccc;
   }
 }
+
+/* =====================================================
+   PREVIOUS / NEXT TOPIC NAVIGATION
+   Usage in .md files:
+   <div class="prev-next-nav" markdown>
+     [← Previous: Intro](01-introduction.md){ .md-button }
+     [Next: File System →](02-filesystem.md){ .md-button .md-button--primary }
+   </div>
+===================================================== */
+
+.prev-next-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--section-divider);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.prev-next-nav .md-button {
+  font-size: 0.82rem;
+  padding: 0.5em 1.2em;
+}
+
+@media screen and (max-width: 480px) {
+  .prev-next-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .prev-next-nav .md-button {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+/* =====================================================
+   COURSE HUB — SYLLABUS & LANDING PAGE STYLES
+===================================================== */
+
+.course-path-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.course-path-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+}
+
+.course-path-step.beginner     { border-color: var(--vs-success); color: var(--vs-success); }
+.course-path-step.intermediate { border-color: var(--vs-warning); color: var(--vs-warning); }
+.course-path-step.advanced     { border-color: var(--vs-danger);  color: var(--vs-danger);  }
+
+.course-path-arrow {
+  font-size: 0.85rem;
+  color: var(--hero-subtitle);
+}
+
+.course-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.course-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--hero-subtitle);
+}
+
+.course-stat strong {
+  color: var(--md-default-fg-color);
+}

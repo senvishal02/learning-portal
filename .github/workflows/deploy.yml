@@ -1,7 +1,8 @@
-name: Deploy MkDocs
+name: Deploy MkDocs to GitHub Pages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PYTHON_VERSION: "3.11"
 
 on:
   push:
@@ -16,77 +17,85 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
+    name: Build MkDocs Site
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      # ── Log trigger source ────────────────────────────────────
+      - name: Log trigger context
+        run: |
+          echo "=== Build Triggered ==="
+          echo "Event:        ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "Source repo:  ${{ github.event.client_payload.source_repo }}"
+            echo "Branch:       ${{ github.event.client_payload.source_branch }}"
+            echo "Commit SHA:   ${{ github.event.client_payload.commit_sha }}"
+            echo "Triggered by: ${{ github.event.client_payload.triggered_by }}"
+          fi
+          echo "======================="
+
+      - name: Checkout portal repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Setup Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Cache pip
+      - name: Cache pip dependencies
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-      - name: Install dependencies
+      - name: Install MkDocs dependencies
         run: pip install -r requirements.txt
 
-      - name: Clone courses repo
+      # ── Clone all content repos ───────────────────────────────
+      - name: Clone content repositories
         run: |
-          rm -rf docs/courses
-          git clone --depth 1 https://github.com/senvishal02/courses.git docs/courses
-        continue-on-error: true
+          clone_repo() {
+            local repo=$1 target=$2
+            echo "→ Cloning senvishal02/${repo} into ${target}"
+            rm -rf "$target"
+            if git clone --depth 1 --quiet \
+              "https://github.com/senvishal02/${repo}.git" "$target"; then
+              echo "  ✅ ${repo} cloned successfully"
+            else
+              echo "  ⚠️  WARNING: ${repo} clone failed — ${target} will be empty"
+              mkdir -p "$target"
+            fi
+          }
 
-      - name: Clone interview-prep repo
-        run: |
-          rm -rf docs/interview-prep
-          git clone --depth 1 https://github.com/senvishal02/interview-prep.git docs/interview-prep
-        continue-on-error: true
+          clone_repo "courses"       "docs/courses"
+          clone_repo "interview-prep" "docs/interview-prep"
+          clone_repo "labs"          "docs/labs"
+          clone_repo "projects"      "docs/projects"
+          clone_repo "cheatsheets"   "docs/cheatsheets"
+          clone_repo "roadmap"       "docs/roadmap"
 
-      - name: Clone labs repo
-        run: |
-          rm -rf docs/labs
-          git clone --depth 1 https://github.com/senvishal02/labs.git docs/labs
-        continue-on-error: true
+      # ── Build ─────────────────────────────────────────────────
+      - name: Build MkDocs site
+        env:
+          ENABLE_GIT_DATES: "true"
+          ENABLE_MINIFY: "true"
+        run: mkdocs build --strict
 
-      - name: Clone projects repo
-        run: |
-          rm -rf docs/projects
-          git clone --depth 1 https://github.com/senvishal02/projects.git docs/projects
-        continue-on-error: true
-
-      - name: Clone cheatsheets repo
-        run: |
-          rm -rf docs/cheatsheets
-          git clone --depth 1 https://github.com/senvishal02/cheatsheets.git docs/cheatsheets
-        continue-on-error: true
-
-      - name: Clone roadmap repo
-        run: |
-          rm -rf docs/roadmap
-          git clone --depth 1 https://github.com/senvishal02/roadmap.git docs/roadmap
-        continue-on-error: true
-
-      - name: Build site
-        run: mkdocs build
-
-      - name: Upload site
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
   deploy:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     environment:

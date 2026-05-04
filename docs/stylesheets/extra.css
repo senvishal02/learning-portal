@@ -118,10 +118,26 @@
   color: #0f172a !important;
 }
 
-.mdx-hero .md-button--primary:hover {
+.mdx-hero .md-button:hover,
+.mdx-cta .md-button:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   filter: brightness(1.1);
+}
+
+.mdx-hero .md-button--primary:hover,
+.mdx-cta .md-button--primary:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+[data-md-color-scheme="slate"] .mdx-hero .md-button:hover,
+[data-md-color-scheme="slate"] .mdx-cta .md-button:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .mdx-hero .md-button--primary:hover,
+[data-md-color-scheme="slate"] .mdx-cta .md-button--primary:hover {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
 }
 
 /* ── Content Container (Home Only) ───────────────────────────────────── */
@@ -245,12 +261,48 @@
   margin-bottom: 1.5rem !important;
 }
 
+.mdx-cta .md-button {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  margin: 0.5rem;
+  transition: all var(--transition-smooth);
+}
+
+.mdx-cta .md-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.mdx-cta .md-button--primary {
+  background-color: #ffffff;
+  color: var(--md-primary-fg-color) !important;
+  border-color: #ffffff;
+}
+
+.mdx-cta .md-button--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--md-primary-fg-color) !important;
+}
+
 /* ── Material Overrides ────────────────────────────────────────────────── */
 .md-header {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   background-color: rgba(var(--md-primary-fg-color--rgb), 0.9) !important;
   transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+.md-header__button {
+  color: #ffffff !important;
+}
+
+.md-header__button.md-logo img, 
+.md-header__button.md-logo svg {
+  fill: #ffffff !important;
+}
+
+.md-header__title {
+  color: #ffffff !important;
 }
 
 [data-md-color-scheme="slate"] .md-header {
@@ -382,8 +434,17 @@
 .marquee-item:hover {
   filter: grayscale(0);
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
+
+.marquee-item:nth-child(8n+1):hover { color: #FF9900; } /* AWS */
+.marquee-item:nth-child(8n+2):hover { color: #0089D6; } /* Azure */
+.marquee-item:nth-child(8n+3):hover { color: #4285F4; } /* GCP */
+.marquee-item:nth-child(8n+4):hover { color: #326CE5; } /* Kubernetes */
+.marquee-item:nth-child(8n+5):hover { color: #844FBA; } /* Terraform */
+.marquee-item:nth-child(8n+6):hover { color: #2496ED; } /* Docker */
+.marquee-item:nth-child(8n+7):hover { color: #3776AB; } /* Python */
+.marquee-item:nth-child(8n+8):hover { color: #EE0000; } /* Ansible */
 
 .marquee-item svg {
   max-width: 100%;

@@ -288,35 +288,77 @@
 .md-header {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background-color: rgba(var(--md-primary-fg-color--rgb), 0.9) !important;
+  background-color: rgba(241, 245, 249, 0.9) !important; /* Platinum Translucent */
   transition: background-color 0.3s, backdrop-filter 0.3s;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.1);
 }
 
 .md-header__button {
-  color: #ffffff !important;
+  color: #334155 !important; /* Deep Steel */
 }
 
 .md-header__button.md-logo img, 
 .md-header__button.md-logo svg {
-  fill: #ffffff !important;
+  fill: #334155 !important;
 }
 
 .md-header__title {
-  color: #ffffff !important;
+  color: #0f172a !important; /* Obsidian */
+  font-weight: 700 !important;
+}
+
+/* Search Box in Light Mode */
+.md-search__input {
+  background-color: rgba(51, 65, 85, 0.05) !important;
+  color: #0f172a !important;
+}
+
+.md-search__icon {
+  color: #334155 !important;
 }
 
 [data-md-color-scheme="slate"] .md-header {
-  background-color: rgba(15, 23, 42, 0.8) !important;
+  background-color: rgba(15, 23, 42, 0.8) !important; /* Gunmetal Translucent */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-header__title {
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo img, 
+[data-md-color-scheme="slate"] .md-header__button.md-logo svg {
+  fill: #ffffff !important;
+}
+
 .md-tabs {
-  background-color: var(--md-primary-fg-color) !important;
+  background-color: #f1f5f9 !important; /* Platinum Base */
   transition: background-color 0.3s;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.1);
+}
+
+.md-tabs__link {
+  color: #475569 !important; /* Steel */
+  opacity: 0.8;
+}
+
+.md-tabs__link--active {
+  color: #0f172a !important; /* Obsidian */
+  opacity: 1;
 }
 
 [data-md-color-scheme="slate"] .md-tabs {
-  background-color: rgba(15, 18, 30, 0.8) !important;
+  background-color: #0f172a !important; /* Gunmetal */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #94a3b8 !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #ffffff !important;
 }
 
 /* ── Hero Refinements ──────────────────────────────────────────────────── */

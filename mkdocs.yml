@@ -226,7 +226,7 @@ extra_javascript:
   - assets/js/extra.js
 
 extra_css:
-  - assets/css/extra.css
+  - stylesheets/extra.css
 
 # ── Extra Config ──────────────────────────────────────────────────────────────
 extra:

@@ -1,47 +1,45 @@
 {% extends "base.html" %}
 
-{# ── Announcement bar ─────────────────────────────────── #}
-{% block announce %}
-  <style>
-    .md-banner {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color: #e0e0e0;
-    }
-    .md-banner a {
-      color: #00d2ff;
-      font-weight: 600;
-    }
-    .md-banner a:hover {
-      color: #fff;
-    }
-  </style>
-  🚀 <strong>DevOps &amp; MLOps Engineering Hub</strong> —
-  Courses, Labs, Projects &amp; Interview Prep |
-  <a href="https://youtube.com/@senvishal02" target="_blank" rel="noopener">
-    Subscribe on YouTube ▸
-  </a>
+{% block tabs %}
+  {{ super() }}
+  
+  {% if page.is_homepage %}
+    <section class="mdx-hero">
+      <div class="md-grid md-typeset">
+        <div class="mdx-hero__content">
+          <h1>Professional DevOps & MLOps Engineering Hub</h1>
+          <p>Production-grade learning platform for Senior Engineers. Master Kubernetes, MLOps, and Platform Engineering with hands-on labs and real-world projects.</p>
+          <div class="mdx-hero__actions">
+            <a href="{{ 'courses/' | url }}" class="md-button md-button--primary">
+              Explore Courses
+            </a>
+            <a href="{{ 'roadmap/' | url }}" class="md-button">
+              View Roadmaps
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background Elements -->
+      <div class="mdx-hero__bg">
+        <div class="mdx-hero__gradient"></div>
+        <svg class="mdx-hero__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        <div class="mdx-hero__scroll-indicator">
+          <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}
 
-{# ── Extra head tags ──────────────────────────────────── #}
-{% block extrahead %}
-  {% if page and page.meta %}
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ page.meta.title | default(config.site_name) }}" />
-  <meta property="og:description" content="{{ page.meta.description | default(config.site_description) }}" />
-  <meta property="og:url" content="{{ page.canonical_url }}" />
-  <meta property="og:site_name" content="{{ config.site_name }}" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{ page.meta.title | default(config.site_name) }}" />
-  <meta name="twitter:description" content="{{ page.meta.description | default(config.site_description) }}" />
+{% block content %}
+  {% if page.is_homepage %}
+    <div class="mdx-container">
+      {{ super() }}
+    </div>
+  {% else %}
+    {{ super() }}
   {% endif %}
-
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- Inter font (body text) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 {% endblock %}

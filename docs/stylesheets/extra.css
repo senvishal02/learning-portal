@@ -1,251 +1,414 @@
-/* =====================================================
-   BASE TYPOGRAPHY
-===================================================== */
-
-.md-typeset {
-  line-height: 1.6;
+/* ── Design Tokens ────────────────────────────────────────────────────────── */
+:root {
+  --mdx-accent: #00d2ff;
+  --mdx-text-dim: #94a3b8;
+  --transition-smooth: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.md-typeset h1 {
-  margin-top: 0;
+/* Light Theme Variables (Platinum/Aluminum) */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #334155; /* Slate 700 - Deep Steel */
+  --md-primary-bg-color: #f1f5f9;
+  --md-default-bg-color: #f1f5f9; /* Soft Platinum */
+  --mdx-hero-bg: #cbd5e1; /* Slate 300 - Light Aluminum */
+  --mdx-hero-text: #0f172a;
+  --mdx-text-dim: #475569;
+  --mdx-hero-gradient: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+  --mdx-card-bg: #e2e8f0; /* Slate 200 */
+  --mdx-card-border: rgba(51, 65, 85, 0.1);
+  --mdx-card-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --mdx-cta-bg: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+  --md-footer-bg-color: #94a3b8; /* Slate 400 */
+  --md-footer-fg-color: #0f172a;
 }
 
-.md-typeset h2,
-.md-typeset h3 {
-  margin-top: 1.5em;
+/* Dark Theme Variables (Gunmetal/Obsidian) */
+[data-md-color-scheme="slate"] {
+  --mdx-hero-bg: #0f172a; /* Slate 900 */
+  --mdx-hero-text: #f1f5f9;
+  --mdx-hero-gradient: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+  --mdx-card-bg: #1e293b; /* Slate 800 */
+  --mdx-card-border: rgba(255, 255, 255, 0.05);
+  --mdx-card-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  --mdx-cta-bg: linear-gradient(135deg, #1e293b 0%, #020617 100%);
 }
 
-
-
-/* =====================================================
-   CODE BLOCKS
-===================================================== */
-
-.md-typeset pre {
-  padding: 0;
-}
-
-.md-typeset pre code {
-  font-size: 0.8rem;
-}
-
-
-
-/* =====================================================
-   GRID / LAYOUT
-===================================================== */
-
-.md-typeset .grid.cards {
-  gap: 1rem;
-}
-
-
-
-/* =====================================================
-   ICON TOOLBAR
-===================================================== */
-
-.icon-toolbar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.icon-toolbar a {
-  padding: 6px 5px;
-  border-radius: 6px;
-}
-
-
-
-/* =====================================================
-   TOOLTIP
-===================================================== */
-
-.tooltip {
+/* ── Hero Section (Home Only) ────────────────────────────────────────── */
+.mdx-hero {
   position: relative;
-  display: inline-block;
+  background: var(--mdx-hero-bg);
+  color: var(--mdx-hero-text);
+  overflow: hidden;
+  padding: 10rem 1rem 15rem;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.mdx-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: var(--mdx-hero-gradient);
+}
+
+.mdx-hero__wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  fill: var(--md-default-bg-color);
+  transition: fill 0.3s;
+}
+
+.mdx-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: reveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.mdx-hero h1 {
+  font-size: clamp(2.8rem, 10vw, 5rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  margin-bottom: 1.5rem !important;
+  background: linear-gradient(135deg, var(--mdx-hero-text) 0%, var(--mdx-text-dim) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.05em !important;
+}
+
+.mdx-hero p {
+  font-size: 1.35rem !important;
+  color: var(--mdx-text-dim) !important;
+  max-width: 700px;
+  margin: 0 auto 3.5rem !important;
+  line-height: 1.6 !important;
+}
+
+.mdx-hero__actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mdx-hero .md-button {
+  padding: 1rem 3rem;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transition: all var(--transition-smooth);
+}
+
+.mdx-hero .md-button--primary {
+  background: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: #fff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-md-color-scheme="slate"] .mdx-hero .md-button--primary {
+  background: #f1f5f9;
+  border-color: #f1f5f9;
+  color: #0f172a !important;
+}
+
+.mdx-hero .md-button--primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+/* ── Content Container (Home Only) ───────────────────────────────────── */
+.mdx-container {
+  margin-top: -10rem;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.mdx-container .md-main__inner {
+  background: transparent;
+}
+
+/* ── Premium Card Grid ─────────────────────────────────────────────────── */
+.mdx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.mdx-card {
+  position: relative;
+  background: var(--mdx-card-bg);
+  border: 1px solid var(--mdx-card-border);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  transition: all var(--transition-smooth);
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--mdx-card-shadow);
+}
+
+.md-link-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
   cursor: pointer;
 }
 
-.tooltip .tooltip-content {
-  visibility: hidden;
+.mdx-card::before {
+  content: '';
   position: absolute;
-  bottom: 120%;
-  left: 0;
-
-  width: 260px;
-  padding: 10px;
-
-  background: #1e1e1e;
-  color: #fff;
-
-  border-radius: 6px;
-  font-size: 13px;
-
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--mdx-accent);
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity 0.3s;
 }
 
-.tooltip:hover .tooltip-content {
-  visibility: visible;
+.mdx-card:hover {
+  border-color: var(--mdx-accent);
+  transform: translateY(-10px);
+  box-shadow: var(--mdx-card-shadow), 0 0 20px rgba(0, 210, 255, 0.1);
+  background: var(--mdx-hero-gradient); /* Subtle sheen */
+}
+
+.mdx-card:hover::before {
   opacity: 1;
 }
 
-
-
-/* =====================================================
-   COURSE PREVIEW
-===================================================== */
-
-.course-preview {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+.mdx-card h3 {
+  margin: 0 !important;
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: var(--md-default-fg-color) !important;
+  border-left: none !important;
+  padding-left: 0 !important;
 }
 
-.course-preview .preview-box {
-  display: none;
+.mdx-card p {
+  margin: 0 !important;
+  color: var(--mdx-text-dim) !important;
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+}
+
+.mdx-card-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 210, 255, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mdx-accent);
+}
+
+/* ── Trust & Resource Sections ────────────────────────────────────────── */
+.mdx-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.mdx-section-header h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ── Newsletter / CTA ──────────────────────────────────────────────────── */
+.mdx-cta {
+  background: var(--mdx-cta-bg);
+  border-radius: 40px;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #fff;
+  margin: 8rem 0;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
+}
+
+.mdx-cta h2 {
+  color: #fff !important;
+  border-left: none !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ── Material Overrides ────────────────────────────────────────────────── */
+.md-header {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(var(--md-primary-fg-color--rgb), 0.9) !important;
+  transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.md-tabs {
+  background-color: var(--md-primary-fg-color) !important;
+  transition: background-color 0.3s;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: rgba(15, 18, 30, 0.8) !important;
+}
+
+/* ── Hero Refinements ──────────────────────────────────────────────────── */
+.mdx-hero__scroll-indicator {
   position: absolute;
-  top: 30px;
-  left: 0;
-
-  width: 300px;
-  padding: 12px;
-
-  background: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 8px;
-
-  box-shadow: 0 4px 20px rgba(0,0,0,.15);
-  z-index: 999;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: mdx-bounce 2s infinite;
+  opacity: 0.6;
 }
 
-.course-preview:hover .preview-box {
-  display: block;
+@keyframes mdx-bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+  40% {transform: translateX(-50%) translateY(-10px);}
+  60% {transform: translateX(-50%) translateY(-5px);}
 }
 
-
-
-/* =====================================================
-   COURSE LINKS
-===================================================== */
-
-.course-link {
-  text-decoration: none;
-  color: inherit;
+/* ── Card Glow & Interactive Effects ────────────────────────────────────── */
+.mdx-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.course-title {
-  display: inline-block;
-  padding: 4px 6px;
-  border-radius: 6px;
-  transition: color .2s ease, background .2s ease;
+.mdx-card:hover {
+  background: rgba(var(--md-accent-fg-color--rgb), 0.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 210, 255, 0.1);
 }
 
-.course-title:hover {
-  color: var(--md-accent-fg-color);
-  background: rgba(127,127,127,.08);
+/* ── Footer Refinements ─────────────────────────────────────────────────── */
+.md-footer {
+  background-color: var(--md-footer-bg-color, var(--md-default-bg-color));
+  color: var(--md-footer-fg-color, var(--md-default-fg-color));
+  transition: background-color 0.3s;
 }
 
-.course-title:hover .twemoji svg {
-  fill: var(--md-accent-fg-color);
+.md-footer-meta {
+  background-color: transparent !important;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  padding: 3rem 0;
 }
 
-/* =====================================================
-   COURSE LINK COLORS
-===================================================== */
-
-/* Light mode */
-[data-md-color-scheme="default"] .course-title,
-[data-md-color-scheme="default"] .course-link {
-  color: #000;
+.md-footer-meta__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 
-[data-md-color-scheme="default"] .twemoji svg {
-  fill: #000;
+.md-copyright {
+  text-align: left;
+  margin: 0 !important;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  flex: 1;
 }
 
-/* Dark mode (already exists but keeping clean) */
-[data-md-color-scheme="slate"] .course-title,
-[data-md-color-scheme="slate"] .course-status {
-  color: #fff;
+.md-footer-social {
+  padding: 0 !important;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
 }
 
-[data-md-color-scheme="slate"] .twemoji svg {
-  fill: #fff;
+/* ── Responsive Footer ─────────────────────────────────────────────────── */
+@media screen and (max-width: 45em) {
+  .md-footer-meta__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .md-copyright { text-align: center; }
+  .md-footer-social { justify-content: center; }
 }
 
-/* =====================================================
-   LIGHT MODE
-===================================================== */
-
-[data-md-color-scheme="default"] {
-  --course-bg: #f5f7fb;
-  --h1-color: #1A7DA4;
-  --h2-color: #11B7C5;
-  --h3-color: #EE653A;
-  --h4-color: #DD7F67;
+[data-md-color-scheme="default"] .md-footer-meta {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-[data-md-color-scheme="default"] body {
-  background: var(--course-bg);
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: #0b0f1a;
 }
 
-
-
-/* =====================================================
-   DARK MODE
-===================================================== */
-
-[data-md-color-scheme="slate"] {
-  --course-bg: #303446;
-  --h1-color: #11B7C5;
-  --h2-color: #4CFFD2;
-  --h3-color: #FFA600;
-  --h4-color: #DD7F67;
+/* ── Marquee Animation ─────────────────────────────────────────────────── */
+.marquee-container {
+  overflow: hidden;
+  padding: 5rem 0;
+  position: relative;
+  background: transparent;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-[data-md-color-scheme="slate"] body {
-  background: var(--course-bg);
+.marquee-content {
+  display: flex;
+  gap: 8rem;
+  width: max-content;
+  animation: mdx-marquee 50s linear infinite;
+  align-items: center;
 }
 
-[data-md-color-scheme="slate"] .course-title,
-[data-md-color-scheme="slate"] .course-status {
-  color: #fff;
+.marquee-item {
+  width: 160px;
+  height: 40px;
+  color: var(--md-default-fg-color--lighter);
+  opacity: 0.4;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(1);
 }
 
-[data-md-color-scheme="slate"] .twemoji svg {
-  fill: #fff;
+.marquee-item:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-
-
-/* =====================================================
-   HEADINGS (shared logic)
-===================================================== */
-
-.md-typeset h1 {
-  color: var(--h1-color);
-  border-bottom: 3px solid var(--h1-color);
-  padding-bottom: 6px;
-  font-weight: 900;
+.marquee-item svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
 }
 
-.md-typeset h2 {
-  color: var(--h2-color);
-  font-weight: 700;
-  border-left: 4px solid var(--h2-color);
-  padding-left: 10px;
+@keyframes mdx-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.md-typeset h3 {
-  color: var(--h3-color);
-  font-weight: 700;
+/* ── Animations ────────────────────────────────────────────────────────── */
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.md-typeset h4 {
-  color: var(--h4-color);
-  font-weight: 700;
+/* ── Responsive Fixes ──────────────────────────────────────────────────── */
+@media screen and (max-width: 45em) {
+  .mdx-hero { padding: 6rem 1rem 10rem; }
+  .mdx-container { margin-top: -5rem; }
+  .mdx-grid { grid-template-columns: 1fr; }
+  .marquee-content { gap: 2rem; }
+  .marquee-item { width: 80px; }
 }

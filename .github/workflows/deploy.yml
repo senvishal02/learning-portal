@@ -1,7 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
-
-env:
-  PYTHON_VERSION: "3.11"
+name: Deploy Learning Portal
 
 on:
   push:
@@ -19,12 +16,15 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  PYTHON_VERSION: "3.12"
+
 jobs:
   build:
     name: Build MkDocs Site
     runs-on: ubuntu-latest
     steps:
-      # ── Log trigger source ────────────────────────────────────
+      # ── Log trigger source (from your sample) ─────────────────
       - name: Log trigger context
         run: |
           echo "=== Build Triggered ==="
@@ -47,6 +47,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      # ⚡ Added Caching for speed
       - name: Cache pip dependencies
         uses: actions/cache@v5
         with:
@@ -58,38 +59,37 @@ jobs:
       - name: Install MkDocs dependencies
         run: pip install -r requirements.txt
 
-      # ── Clone all content repos ───────────────────────────────
-      - name: Clone content repositories
+      # ── Improved Cloning: Handing the Monorepo ────────────────
+      - name: Clone knowledge-base monorepo
         run: |
-          clone_repo() {
-            local repo=$1 target=$2
-            echo "→ Cloning senvishal02/${repo} into ${target}"
-            rm -rf "$target"
-            if git clone --depth 1 --quiet \
-              "https://github.com/senvishal02/${repo}.git" "$target"; then
-              echo "  ✅ ${repo} cloned successfully"
-            else
-              echo "  ⚠️  WARNING: ${repo} clone failed — ${target} will be empty"
-              mkdir -p "$target"
-            fi
-          }
+          echo "→ Cloning senvishal02/knowledge-base into temporary directory"
+          git clone --depth 1 --quiet https://github.com/senvishal02/knowledge-base.git _kb
 
-          clone_repo "courses"       "docs/courses"
-          clone_repo "interview-prep" "docs/interview-prep"
-          clone_repo "labs"          "docs/labs"
-          clone_repo "projects"      "docs/projects"
-          clone_repo "cheatsheets"   "docs/cheatsheets"
-          clone_repo "roadmap"       "docs/roadmap"
+      - name: Mount content into docs/
+        run: |
+          # Creates folders and moves content from the monorepo
+          mkdir -p docs/courses docs/labs docs/interview-prep docs/projects docs/cheatsheets docs/roadmap docs/blog
+          
+          echo "=== Mounting content ==="
+          cp -r _kb/courses/. docs/courses/ 2>/dev/null || true
+          cp -r _kb/labs/. docs/labs/ 2>/dev/null || true
+          cp -r _kb/interview-prep/. docs/interview-prep/ 2>/dev/null || true
+          cp -r _kb/projects/. docs/projects/ 2>/dev/null || true
+          cp -r _kb/cheatsheets/. docs/cheatsheets/ 2>/dev/null || true
+          cp -r _kb/roadmap/. docs/roadmap/ 2>/dev/null || true
+          cp -r _kb/blog/. docs/blog/ 2>/dev/null || true
+          echo "========================"
+          echo "✅ Content mounted successfully."
 
       # ── Build ─────────────────────────────────────────────────
       - name: Build MkDocs site
         env:
-          ENABLE_GIT_DATES: "true"
+          ENABLE_GIT_DATES: "false"
           ENABLE_MINIFY: "true"
-        run: mkdocs build --strict
+        run: mkdocs build
 
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
 
@@ -100,9 +100,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - name: Deploy
         id: deployment

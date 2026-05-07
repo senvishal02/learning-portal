@@ -402,6 +402,13 @@ nav:
           - Lab 03 — Model Serving with BentoML: labs/mlops-labs/lab-03-bentoml.md
           - Lab 04 — Feature Store with Feast: labs/mlops-labs/lab-04-feast.md
           - Lab 05 — LLM API Deployment: labs/mlops-labs/lab-05-llm-api.md
+      - Git-Github:
+          - labs/git-github/index.md
+          - Lab 01 — Git Basics: labs/git-github/lab-01-git.md
+          - Lab 02 — GitHub Basics: labs/git-github/lab-02-github.md
+          - Lab 03 — Advanced Git: labs/git-github/lab-03-advanced-git.md
+          - Lab 04 — GitHub Advanced: labs/git-github/lab-04-advanced-github.md
+          - Lab 05 — Best Practices: labs/git-github/best-practics.md
 
   # ── PROJECTS ─────────────────────────────────────────────────────────────
   - Projects:

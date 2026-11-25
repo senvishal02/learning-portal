@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "4943fdf33f6091a1",
+    "type": "split",
+    "children": [
+      {
+        "id": "af746fb8e190955c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "03472f68601c528c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6217e112992989a1",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "a5d0cbea2a1caa73",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "8df40b1d72d71189",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "db8d1ebe2b50abf8",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "9c6fd4e81642e0ed",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "7f7e747ce53a062a",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "1ed2050818cdd801",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "32e99a6db21796a0",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "5b4af59badbf188b",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "47f415d0a59447a5",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "gitsync-portal:Open GitSync Portal": false
+    }
+  },
+  "active": "03472f68601c528c",
+  "lastOpenFiles": [
+    "requirements.txt",
+    "overrides/main.html",
+    "overrides",
+    "mkdocs.yml",
+    "docs/tags.md",
+    "docs/stylesheets/extra.css",
+    "docs/stylesheets",
+    "docs/meta/scalability-guide.md",
+    "docs/meta/best-practices.md",
+    "docs/meta",
+    "docs/index.md",
+    "docs/includes/abbreviations.md",
+    "docs/includes",
+    "docs/icon-test.md",
+    "docs/blog/index.md",
+    "docs/blog",
+    "docs/assets/js/mathjax.js",
+    "docs/assets/js/extra.js",
+    "docs/assets/img/img4.png",
+    "docs/assets/img/img3.png",
+    "docs/assets/img/img2.png",
+    "docs/assets/img/img1.png"
+  ]
+}
